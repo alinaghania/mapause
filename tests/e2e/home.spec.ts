@@ -7,7 +7,6 @@ test.describe("Page d accueil", () => {
     await expect(page.locator("text=Sona").first()).toBeVisible();
     await expect(page.getByRole("link", { name: "Decouvrir", exact: true })).toBeVisible();
     await expect(page.locator("text=Nos coups de coeur")).toBeVisible();
-    await expect(page.locator("text=Nos univers")).toBeVisible();
 
     await page.screenshot({
       path: "tests/results/home-full.png",

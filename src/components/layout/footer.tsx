@@ -8,31 +8,28 @@ export function Footer() {
           <div className="md:col-span-1">
             <span className="font-[var(--font-serif)] text-2xl tracking-[0.3em] uppercase">Sona</span>
             <p className="mt-4 text-sm text-background/60 leading-relaxed max-w-xs">
-              Tops indiens brodes a la main et churiyans artisanaux. L'eclat de la tradition, le style d'aujourd'hui.
+              Des pieces brodees a la main. Un heritage porte avec intention.
             </p>
           </div>
           <div>
             <h4 className="text-[11px] tracking-[0.2em] uppercase mb-6 text-background/40">Collection</h4>
             <ul className="space-y-3">
-              <li><Link href="/products?category=tops" className="text-sm text-background/60 hover:text-background transition-colors">Tops Brodes</Link></li>
-              <li><Link href="/products?category=accessoires" className="text-sm text-background/60 hover:text-background transition-colors">Churiyans & Accessoires</Link></li>
+              <li><Link href="/products?category=tops" className="text-sm text-background/60 hover:text-background transition-colors">Tops</Link></li>
+              <li><Link href="/products?category=accessoires" className="text-sm text-background/60 hover:text-background transition-colors">Accessoires</Link></li>
             </ul>
           </div>
           <div>
-            <h4 className="text-[11px] tracking-[0.2em] uppercase mb-6 text-background/40">Services</h4>
+            <h4 className="text-[11px] tracking-[0.2em] uppercase mb-6 text-background/40">Informations</h4>
             <ul className="space-y-3 text-sm text-background/60">
-              <li>Livraison offerte des 80 EUR</li>
-              <li>Retours gratuits sous 30 jours</li>
-              <li>Paiement securise</li>
               <li>Expedition mondiale</li>
+              <li>Retours sous 30 jours</li>
+              <li>Paiement securise</li>
             </ul>
           </div>
           <div>
             <h4 className="text-[11px] tracking-[0.2em] uppercase mb-6 text-background/40">Newsletter</h4>
-            <p className="text-sm text-background/60 mb-4">Recevez nos nouveautes en avant-premiere.</p>
-            <div className="flex">
-              <input type="email" placeholder="votre@email.com" className="flex-1 bg-transparent border-b border-background/30 text-sm py-2 px-0 focus:outline-none focus:border-background placeholder:text-background/30" />
-            </div>
+            <p className="text-sm text-background/60 mb-4">Nouvelles pieces, en avant-premiere.</p>
+            <input type="email" placeholder="votre@email.com" className="w-full bg-transparent border-b border-background/30 text-sm py-2 px-0 focus:outline-none focus:border-background placeholder:text-background/30" />
           </div>
         </div>
         <div className="mt-16 pt-8 border-t border-background/10 text-center text-[11px] tracking-[0.15em] uppercase text-background/30">SONA {new Date().getFullYear()}</div>

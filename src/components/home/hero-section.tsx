@@ -14,8 +14,8 @@ export function HeroSection() {
         className="absolute inset-0"
       >
         <Image
-          src="/products/top-bordeaux-brode.png"
-          alt="SONA Collection"
+          src="/products/top-noir-dore.png"
+          alt="SONA"
           fill
           className="object-cover object-top"
           priority
@@ -24,21 +24,13 @@ export function HeroSection() {
       </motion.div>
       <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/70" />
       <div className="relative z-10 flex h-full flex-col items-center justify-end text-center text-white pb-24 px-6">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="text-[11px] tracking-[0.4em] uppercase mb-4 text-white/70"
-        >
-          Tops indiens brodes & Churiyans
-        </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.7 }}
           className="font-[var(--font-serif)] text-5xl sm:text-7xl lg:text-8xl font-light italic tracking-wide"
         >
-          L'Eclat Indien
+          Porte avec intention
         </motion.h1>
         <motion.p
           initial={{ opacity: 0 }}
@@ -46,8 +38,9 @@ export function HeroSection() {
           transition={{ duration: 1, delay: 1.2 }}
           className="mt-6 max-w-md text-sm text-white/80 leading-relaxed tracking-wide"
         >
-          Des tops brodes a la main et des churiyans artisanaux
-          qui celebrent l'heritage et la beaute.
+          Chaque fil raconte une histoire. Chaque perle porte un heritage.
+          Des pieces brodees a la main par des artisans indiens,
+          pour celles qui savent ce qu'elles portent.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

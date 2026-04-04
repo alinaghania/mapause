@@ -17,9 +17,9 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "SONA | Mode Femme",
+  title: "SONA",
   description:
-    "SONA. L'elegance au quotidien. Decouvrez notre collection de mode feminine.",
+    "Tops brodes a la main par des artisans indiens. Pieces uniques, expedition mondiale.",
 };
 
 export default function RootLayout({
