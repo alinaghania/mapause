@@ -1,4 +1,4 @@
-import { CheckCircle2, XCircle } from "lucide-react";
+import { CheckCircle2, XCircle, Star } from "lucide-react";
 
 const rows = [
   {
@@ -56,12 +56,12 @@ const rows = [
 function BoolCell({ value, note }: { value: boolean; note?: string }) {
   return value ? (
     <span className="inline-flex items-center gap-1.5 text-sage-600">
-      <CheckCircle2 size={18} />
+      <CheckCircle2 className="h-6 w-6" />
       {note && <span className="text-xs">({note})</span>}
     </span>
   ) : (
-    <span className="inline-flex items-center text-rose-gold">
-      <XCircle size={18} />
+    <span className="inline-flex items-center text-red-400">
+      <XCircle className="h-6 w-6" />
     </span>
   );
 }
@@ -74,21 +74,29 @@ export function ComparisonSection() {
           Comparatif
         </p>
         <h2 className="font-[var(--font-heading)] text-4xl text-center mt-4">
-          Pourquoi Mapause est differente
+          La difference, c&apos;est la science
         </h2>
+        <p className="text-center text-muted-foreground max-w-xl mx-auto mt-4">
+          Pourquoi Mapause est differente
+        </p>
 
-        <div className="overflow-x-auto mt-12">
-          <table className="w-full min-w-[600px] text-sm">
+        <div className="overflow-x-auto mt-12 rounded-xl overflow-hidden">
+          <table className="w-full min-w-[600px] text-base">
             <thead>
-              <tr className="bg-sage-600 text-white rounded-t-2xl">
-                <th className="text-left py-4 px-6 rounded-tl-2xl font-medium">
+              <tr className="bg-sage-700 text-white">
+                <th className="text-left py-4 px-6 font-semibold">
                   Critere
                 </th>
-                <th className="py-4 px-6 font-bold text-center">MAPAUSE</th>
-                <th className="py-4 px-6 font-medium text-center">
+                <th className="py-4 px-6 font-semibold text-center">
+                  <span className="inline-flex items-center gap-1.5">
+                    <Star className="h-4 w-4 fill-current" />
+                    MAPAUSE
+                  </span>
+                </th>
+                <th className="py-4 px-6 font-semibold text-center">
                   No7 (Boots)
                 </th>
-                <th className="py-4 px-6 font-medium text-center rounded-tr-2xl">
+                <th className="py-4 px-6 font-semibold text-center">
                   Stripes
                 </th>
               </tr>
@@ -100,7 +108,7 @@ export function ComparisonSection() {
                   className={i % 2 === 0 ? "bg-white" : "bg-sage-50"}
                 >
                   <td className="py-4 px-6 font-medium">{row.feature}</td>
-                  <td className="py-4 px-6 text-center bg-sage-50/60">
+                  <td className="py-4 px-6 text-center bg-sage-50 border-l border-r border-sage-200">
                     {row.type === "text" ? (
                       <span className="font-medium">
                         {row.mapause as string}

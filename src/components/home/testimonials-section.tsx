@@ -22,6 +22,8 @@ const testimonials = [
     name: "Sophie L.",
     age: 48,
     city: "Paris",
+    image: "/images/woman-bathroom.png",
+    imageAlt: "Femme utilisant la brume MAPAUSE dans sa salle de bain",
   },
   {
     quote:
@@ -54,6 +56,8 @@ const testimonials = [
     name: "Veronique B.",
     age: 57,
     city: "Nantes",
+    image: "/images/woman-livingroom.png",
+    imageAlt: "Femme se relaxant dans son salon avec la brume MAPAUSE",
   },
 ];
 
@@ -101,13 +105,18 @@ export function TestimonialsSection() {
           Temoignages
         </p>
         <h2 className="font-[var(--font-heading)] text-4xl text-center mt-4">
-          Elles ont adopte Mapause
+          1000+ femmes nous font confiance
         </h2>
-        <p className="text-center text-muted-foreground mt-4">
-          Decouvrez l&apos;experience de nos clientes
-        </p>
+        <div className="flex items-center justify-center gap-2 mt-4">
+          <div className="flex gap-0.5">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <Star key={i} className="h-5 w-5 fill-[#D6B456] text-[#D6B456]" />
+            ))}
+          </div>
+          <span className="text-muted-foreground text-base">4.9/5 basee sur 1247 avis</span>
+        </div>
 
-        <div className="relative mt-12">
+        <div className="relative mt-12 px-12">
           <div ref={emblaRef} className="overflow-hidden">
             <div className="flex">
               {testimonials.map((t) => (
@@ -115,31 +124,30 @@ export function TestimonialsSection() {
                   key={t.name}
                   className="min-w-0 shrink-0 grow-0 basis-full md:basis-1/2 lg:basis-1/3 px-3"
                 >
-                  <div className="bg-white rounded-2xl shadow-sm h-full flex flex-col overflow-hidden">
+                  <div className="bg-white rounded-xl shadow-md border border-sage-100 min-h-[400px] h-full flex flex-col overflow-hidden">
                     {t.image && (
-                      <div className="relative h-48 w-full">
+                      <div className="relative h-52 w-full">
                         <Image
                           src={t.image}
                           alt={t.imageAlt || ""}
                           fill
-                          className="object-cover"
+                          className="object-cover rounded-t-xl"
                         />
                       </div>
                     )}
-                    <div className="p-8 flex flex-col flex-1">
+                    <div className="p-8 pb-6 flex flex-col flex-1">
                     <div className="flex gap-1">
                       {Array.from({ length: 5 }).map((_, i) => (
                         <Star
                           key={i}
-                          size={16}
-                          className="fill-gold text-gold"
+                          className="h-5 w-5 fill-[#D6B456] text-[#D6B456]"
                         />
                       ))}
                     </div>
-                    <p className="italic text-lg leading-relaxed mt-4 flex-1">
+                    <p className="italic text-base leading-relaxed mt-4 flex-1">
                       &ldquo;{t.quote}&rdquo;
                     </p>
-                    <p className="font-medium mt-6">
+                    <p className="font-semibold text-base mt-6 pb-2">
                       {t.name}, {t.age} ans, {t.city}
                     </p>
                     </div>

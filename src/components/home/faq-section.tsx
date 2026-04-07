@@ -51,17 +51,20 @@ export function FaqSection() {
           FAQ
         </p>
         <h2 className="font-[var(--font-heading)] text-4xl text-center mt-4">
-          Questions frequentes
+          Vos questions, nos reponses
         </h2>
+        <p className="text-center text-muted-foreground mt-4">
+          Tout ce que vous devez savoir avant de commander
+        </p>
 
-        <div className="mt-12">
+        <div className="mt-12 bg-white rounded-2xl shadow-sm p-2">
           {faqs.map((faq, i) => (
-            <div key={i} className="border-b border-sage-100 py-6">
+            <div key={i} className="border-b border-sage-200 py-6">
               <button
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
                 className="flex justify-between items-center w-full text-left cursor-pointer"
               >
-                <span className="text-lg font-medium pr-4">
+                <span className="text-lg font-semibold text-charcoal pr-4">
                   {faq.question}
                 </span>
                 <ChevronDown
@@ -79,7 +82,7 @@ export function FaqSection() {
                 }`}
               >
                 <div className="overflow-hidden">
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-base text-muted-foreground leading-relaxed">
                     {faq.answer}
                   </p>
                 </div>

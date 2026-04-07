@@ -3,8 +3,9 @@ import { Zap, Waves, Brain } from "lucide-react";
 const layers = [
   {
     icon: Zap,
-    iconBg: "bg-rose-light",
-    iconColor: "text-rose-gold",
+    iconBg: "bg-[#FCEAEA]",
+    iconColor: "text-[#C97070]",
+    step: "01",
     title: "Fraicheur Immediate",
     time: "0-10 secondes",
     description:
@@ -14,7 +15,8 @@ const layers = [
   {
     icon: Waves,
     iconBg: "bg-sage-100",
-    iconColor: "text-sage-600",
+    iconColor: "text-sage-700",
+    step: "02",
     title: "Action Vasculaire",
     time: "10 sec - 5 min",
     description:
@@ -23,8 +25,9 @@ const layers = [
   },
   {
     icon: Brain,
-    iconBg: "bg-champagne",
-    iconColor: "text-charcoal",
+    iconBg: "bg-[#ECE0DA]",
+    iconColor: "text-[#8B6F5E]",
+    step: "03",
     title: "Regulation Hormonale",
     time: "Usage regulier",
     description:
@@ -41,11 +44,10 @@ export function MechanismSection() {
           Science
         </p>
         <h2 className="font-[var(--font-heading)] text-4xl text-center mt-4">
-          Triple action, efficacite prouvee
+          Comment ca marche ?
         </h2>
         <p className="text-center text-muted-foreground max-w-xl mx-auto mt-4">
-          La seule brume qui combine 3 mecanismes d&apos;action contre les
-          bouffees de chaleur.
+          3 couches d&apos;action en un seul geste
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
@@ -54,19 +56,22 @@ export function MechanismSection() {
             return (
               <div
                 key={layer.title}
-                className="bg-ivory rounded-2xl p-8 border border-sage-100"
+                className="relative bg-white rounded-xl p-8 border border-sage-200 shadow-sm"
               >
+                <span className="font-[var(--font-heading)] text-5xl text-sage-200 absolute top-4 right-6 select-none">
+                  {layer.step}
+                </span>
                 <div
-                  className={`w-14 h-14 rounded-full ${layer.iconBg} ${layer.iconColor} flex items-center justify-center`}
+                  className={`h-14 w-14 rounded-xl ${layer.iconBg} ${layer.iconColor} flex items-center justify-center`}
                 >
-                  <Icon size={24} />
+                  <Icon className="h-7 w-7" />
                 </div>
-                <h3 className="font-[var(--font-heading)] text-xl mt-6">
+                <h3 className="font-[var(--font-heading)] text-xl font-semibold mt-6">
                   {layer.title}
                 </h3>
-                <p className="text-xs text-sage-600 uppercase tracking-wider mt-2">
+                <span className="inline-block bg-sage-700 text-white px-3 py-1 rounded-full text-xs font-medium mt-2">
                   {layer.time}
-                </p>
+                </span>
                 <p className="text-muted-foreground leading-relaxed mt-4">
                   {layer.description}
                 </p>
@@ -74,7 +79,7 @@ export function MechanismSection() {
                   {layer.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="bg-sage-50 text-sage-700 text-xs px-3 py-1 rounded-full"
+                      className="border border-sage-300 bg-sage-50 text-sage-800 font-medium text-xs px-3 py-1 rounded-full"
                     >
                       {tag}
                     </span>

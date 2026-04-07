@@ -25,17 +25,19 @@ const trustItems = [
 
 export function TrustBanner() {
   return (
-    <section className="w-full bg-white border-t border-b border-sage-100">
+    <section className="w-full bg-white border-y border-sage-200">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-2 md:grid-cols-4">
           {trustItems.map((item) => (
             <div
               key={item.title}
-              className="flex flex-col items-center text-center gap-2 py-8"
+              className="flex flex-col items-center text-center gap-3 py-10"
             >
-              <item.icon className="text-sage-600" size={28} />
-              <span className="font-medium text-charcoal">{item.title}</span>
-              <span className="text-sm text-muted-foreground">
+              <div className="bg-sage-100 rounded-full p-3">
+                <item.icon className="text-sage-600" size={32} />
+              </div>
+              <span className="text-base font-semibold text-charcoal">{item.title}</span>
+              <span className="text-sm text-charcoal/70">
                 {item.subtitle}
               </span>
             </div>

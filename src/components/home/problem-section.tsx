@@ -36,7 +36,7 @@ export function ProblemSection() {
           transition={{ duration: 0.6 }}
           className="font-[var(--font-heading)] text-3xl md:text-4xl lg:text-5xl max-w-3xl mx-auto text-center text-charcoal leading-tight"
         >
-          8 femmes sur 10 souffrent de bouffees de chaleur
+          Elles arrivent sans prevenir. Vous n&apos;avez rien demande.
         </motion.h2>
 
         <motion.p
@@ -46,9 +46,9 @@ export function ProblemSection() {
           transition={{ duration: 0.6, delay: 0.15 }}
           className="text-center text-muted-foreground max-w-2xl mx-auto text-lg mt-6 leading-relaxed"
         >
-          Elles arrivent sans prevenir. Au bureau, en reunion, la nuit. La
-          chaleur envahit tout, le coeur s&apos;emballe, la gene s&apos;installe.
-          Vous n&apos;etes pas seule.
+          <span className="font-semibold text-charcoal">8 femmes sur 10</span> souffrent de bouffees de chaleur.
+          Au bureau, en reunion, la nuit. La chaleur envahit tout, le coeur s&apos;emballe,
+          la gene s&apos;installe. Vous n&apos;etes pas seule.
         </motion.p>
 
         <motion.div
@@ -56,18 +56,18 @@ export function ProblemSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.25 }}
-          className="relative w-full max-h-[400px] rounded-2xl overflow-hidden mt-12"
+          className="relative w-full max-h-[500px] rounded-2xl overflow-hidden mt-12"
         >
           <Image
             src="/images/woman-closeup.png"
             alt="Femme utilisant la brume MAPAUSE, les yeux fermés, sereine"
             width={1200}
-            height={400}
-            className="w-full max-h-[400px] object-cover rounded-2xl"
+            height={500}
+            className="w-full max-h-[500px] object-cover rounded-2xl shadow-lg"
           />
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
           {cards.map((card, index) => (
             <motion.div
               key={card.title}
@@ -75,15 +75,15 @@ export function ProblemSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 * index }}
-              className="bg-white rounded-2xl p-8 shadow-sm border border-sage-100"
+              className="bg-white rounded-xl p-8 shadow-sm border border-sage-200"
             >
-              <div className="bg-sage-50 rounded-full p-3 w-fit">
-                <card.icon className="text-sage-600" size={24} />
+              <div className="bg-sage-600 rounded-xl p-3 w-fit">
+                <card.icon className="h-8 w-8 text-white" />
               </div>
-              <h3 className="font-medium text-lg mt-4 text-charcoal">
+              <h3 className="font-semibold text-xl mt-4 text-charcoal">
                 {card.title}
               </h3>
-              <p className="text-muted-foreground mt-2">{card.description}</p>
+              <p className="text-base text-muted-foreground mt-2">{card.description}</p>
             </motion.div>
           ))}
         </div>

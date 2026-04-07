@@ -15,27 +15,26 @@ export function CtaSection() {
         <Image
           src="/images/packshot-spa.png"
           alt="MAPAUSE brume SOS fraîcheur"
-          width={128}
-          height={128}
-          className="h-32 w-auto mx-auto mb-6 drop-shadow-2xl"
+          width={160}
+          height={160}
+          className="h-40 w-auto mx-auto mb-6 brightness-110 drop-shadow-[0_0_30px_rgba(255,255,255,0.3)]"
         />
-        <h2 className="font-[var(--font-heading)] text-4xl md:text-5xl text-white">
-          Prete a retrouver votre fraicheur ?
+        <h2 className="font-[var(--font-heading)] text-5xl md:text-6xl text-white">
+          Votre premiere brume vous attend
         </h2>
         <p className="text-white/70 max-w-xl mx-auto mt-4">
-          Rejoignez des milliers de femmes qui ont dit stop aux bouffees de
-          chaleur.
+          Livraison offerte d&egrave;s 45&euro;. Satisfaite ou remboursee 30 jours.
         </p>
-        <p className="text-2xl font-[var(--font-heading)] mt-8">
+        <p className="text-3xl font-bold font-[var(--font-heading)] mt-8">
           A partir de 19,90&euro;
         </p>
         <Link
           href="/products"
-          className="inline-block bg-rose-gold text-charcoal hover:bg-rose-light rounded-full px-10 py-4 text-lg font-medium mt-6 transition-colors"
+          className="inline-block bg-rose-gold text-charcoal hover:bg-rose-light rounded-full px-14 py-5 text-xl font-medium mt-6 transition-colors"
         >
-          Commander maintenant
+          Oui, je veux ma brume
         </Link>
-        <div className="flex justify-center gap-8 mt-8 text-white/50 text-sm flex-wrap">
+        <div className="flex justify-center gap-8 mt-8 text-white/70 text-sm flex-wrap">
           {trustItems.map((item) => {
             const Icon = item.icon;
             return (

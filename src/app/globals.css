@@ -88,7 +88,7 @@
   --border: #E8EDE3;
   --input: #E8EDE3;
   --ring: #7E8C69;
-  --radius: 9999px;
+  --radius: 0.75rem;
 }
 
 @layer base {

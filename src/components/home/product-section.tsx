@@ -23,7 +23,7 @@ export function ProductSection() {
   const currentFormat = formats.find((f) => f.id === selectedFormat)!;
 
   return (
-    <section className="gradient-rose w-full py-20 lg:py-28">
+    <section className="bg-white w-full py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-6">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -40,9 +40,9 @@ export function ProductSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-[var(--font-heading)] text-4xl md:text-5xl text-center text-charcoal mt-4"
+          className="font-[var(--font-heading)] text-4xl md:text-5xl text-center text-foreground mt-4"
         >
-          Brume SOS Fraicheur
+          Votre alliee anti-bouffees de chaleur
         </motion.h2>
 
         <motion.p
@@ -50,10 +50,10 @@ export function ProductSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-center text-muted-foreground max-w-xl mx-auto mt-4 leading-relaxed"
+          className="text-center text-muted-foreground max-w-2xl mx-auto mt-4 text-lg leading-relaxed"
         >
           La seule brume qui agit sur 3 mecanismes simultanes de la bouffee de
-          chaleur.
+          chaleur. Fraicheur instantanee, action vasculaire, regulation hormonale.
         </motion.p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-16 items-center">
@@ -64,12 +64,12 @@ export function ProductSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <div className="relative aspect-square bg-white rounded-3xl shadow-lg overflow-hidden">
+            <div className="relative aspect-square bg-sage-50 rounded-3xl p-8 shadow-xl overflow-hidden">
               <Image
                 src="/images/packshot-spa.png"
                 alt="MAPAUSE brume SOS fraîcheur"
                 fill
-                className="object-contain"
+                className="object-contain p-6"
               />
             </div>
           </motion.div>
@@ -81,9 +81,14 @@ export function ProductSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.25 }}
           >
-            <h3 className="font-[var(--font-heading)] text-2xl text-charcoal">
-              MAPAUSE - Brume SOS Fraicheur
-            </h3>
+            <div className="flex items-center gap-3">
+              <h3 className="font-[var(--font-heading)] text-3xl font-semibold text-charcoal">
+                MAPAUSE - Brume SOS Fraicheur
+              </h3>
+              <span className="bg-sage-700 text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+                Nouveaute
+              </span>
+            </div>
             <p className="text-muted-foreground mt-2">
               Quand la chaleur monte, Mapause vous rafraichit en 10 secondes.
             </p>
@@ -94,10 +99,10 @@ export function ProductSection() {
                 <button
                   key={format.id}
                   onClick={() => setSelectedFormat(format.id)}
-                  className={`rounded-full px-5 py-2.5 text-sm font-medium transition-colors ${
+                  className={`rounded-full px-6 py-4 text-sm transition-colors ${
                     selectedFormat === format.id
-                      ? "bg-sage-600 text-white"
-                      : "bg-white border border-sage-200 text-charcoal hover:border-sage-400"
+                      ? "bg-sage-700 text-white font-medium shadow-md"
+                      : "bg-white border-2 border-sage-200 text-charcoal hover:border-sage-400"
                   }`}
                 >
                   {format.label}
@@ -106,12 +111,12 @@ export function ProductSection() {
             </div>
 
             {/* Price */}
-            <p className="text-3xl font-[var(--font-heading)] font-semibold text-charcoal mt-6">
+            <p className="text-4xl font-[var(--font-heading)] font-bold text-sage-800 mt-6">
               {currentFormat.price}&euro;
             </p>
 
             {/* Add to cart */}
-            <button className="w-full bg-sage-600 hover:bg-sage-700 text-white rounded-full py-4 text-base font-medium transition-colors mt-6">
+            <button className="w-full bg-sage-700 hover:bg-sage-800 text-white rounded-full h-16 text-lg font-semibold transition-colors mt-6 shadow-lg">
               Ajouter au panier
             </button>
 
@@ -135,8 +140,10 @@ export function ProductSection() {
                   key={benefit}
                   className="flex items-center gap-3 text-charcoal"
                 >
-                  <Check className="size-5 text-sage-600 shrink-0" />
-                  <span className="text-sm">{benefit}</span>
+                  <span className="bg-sage-600 text-white rounded-full p-0.5 shrink-0">
+                    <Check className="size-4" />
+                  </span>
+                  <span className="text-base">{benefit}</span>
                 </li>
               ))}
             </ul>
