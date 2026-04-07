@@ -4,10 +4,12 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion } from "motion/react";
 import { Check } from "lucide-react";
+import { useCart } from "@/components/cart/cart-provider";
+import { toast } from "sonner";
 
 const formats = [
-  { id: "50ml", label: "50ml - Sac a main", price: "19,90" },
-  { id: "100ml", label: "100ml - Maison", price: "29,90" },
+  { id: "50ml", label: "50ml - Sac a main", price: "19,90", cents: 1990 },
+  { id: "100ml", label: "100ml - Maison", price: "29,90", cents: 2990 },
 ];
 
 const benefits = [
@@ -19,8 +21,28 @@ const benefits = [
 
 export function ProductSection() {
   const [selectedFormat, setSelectedFormat] = useState("50ml");
+  const { addItem } = useCart();
 
   const currentFormat = formats.find((f) => f.id === selectedFormat)!;
+
+  function handleAddToCart() {
+    addItem(
+      {
+        slug: "mapause-brume-sos-fraicheur",
+        name: "MAPAUSE - Brume SOS Fraicheur",
+        description: "Brume rafraichissante anti-bouffees de chaleur",
+        price: currentFormat.cents,
+        format: selectedFormat as "50ml" | "100ml",
+        images: ["/images/packshot-spa.png"],
+        featured: true,
+        createdAt: new Date(),
+      },
+      selectedFormat
+    );
+    toast.success("Produit ajoute au panier", {
+      description: `${currentFormat.label} - ${currentFormat.price}€`,
+    });
+  }
 
   return (
     <section id="product" className="bg-white w-full py-16 lg:py-20">
@@ -116,7 +138,10 @@ export function ProductSection() {
             </p>
 
             {/* Add to cart */}
-            <button className="w-full bg-[#1A1A1A] hover:bg-[#333] text-white rounded-full h-16 text-lg font-medium transition-colors mt-6 shadow-lg">
+            <button
+              onClick={handleAddToCart}
+              className="w-full bg-[#1A1A1A] hover:bg-[#333] text-white rounded-full h-16 text-lg font-medium transition-colors mt-6 shadow-lg"
+            >
               Ajouter au panier
             </button>
 

@@ -5,11 +5,11 @@ export async function POST(req: NextRequest) {
   const { items } = await req.json();
 
   const line_items = items.map(
-    (item: { name: string; price: number; quantity: number; size: string }) => ({
+    (item: { name: string; price: number; quantity: number; format: string }) => ({
       price_data: {
         currency: "eur",
         product_data: {
-          name: `${item.name} (${item.size})`,
+          name: `${item.name} (${item.format})`,
         },
         unit_amount: item.price,
       },
