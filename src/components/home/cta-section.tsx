@@ -1,50 +1,28 @@
 "use client";
 
-import Image from "next/image";
-import { Shield, Truck, RotateCcw } from "lucide-react";
-
-const trustItems = [
-  { icon: Shield, label: "Paiement securise" },
-  { icon: Truck, label: "Livraison offerte des 45\u20AC" },
-  { icon: RotateCcw, label: "Retour 30 jours" },
-];
-
 export function CtaSection() {
   return (
-    <section className="bg-[#1A1A1A] py-16 lg:py-20 text-center text-white">
-      <div className="max-w-screen-xl mx-auto px-6">
-        <Image
-          src="/images/packshot-spa.png"
-          alt="Aura de Mapause brume rafraichissante"
-          width={160}
-          height={160}
-          className="h-40 w-auto mx-auto mb-6 brightness-110 drop-shadow-[0_0_30px_rgba(255,255,255,0.3)]"
-        />
-        <h2 className="font-[var(--font-heading)] text-5xl md:text-6xl text-white">
-          Aura vous attend
+    <section className="bg-[#1A1A1A] py-20 lg:py-28 text-center text-white">
+      <div className="max-w-screen-md mx-auto px-6">
+        <p className="tracking-[0.3em] uppercase text-xs text-white/40">
+          Aura de Mapause
+        </p>
+        <h2 className="font-[var(--font-heading)] text-4xl md:text-5xl lg:text-6xl text-white mt-6 leading-tight">
+          Vous meritez de traverser chaque journee avec serenite
         </h2>
-        <p className="text-white/70 max-w-xl mx-auto mt-4">
-          Livraison offerte. Satisfaite ou remboursee 30 jours. Sans engagement.
+        <p className="text-white/60 text-lg mt-6 leading-relaxed max-w-lg mx-auto">
+          Une brumisation. La chaleur s&apos;efface. Vous reprenez le controle.
         </p>
-        <p className="text-3xl font-bold font-[var(--font-heading)] mt-8">
-          A partir de 19,90&euro;
-        </p>
-        <button
-          onClick={() => document.getElementById('product')?.scrollIntoView({ behavior: 'smooth' })}
-          className="inline-block bg-white text-[#1A1A1A] hover:bg-[#F5F5F3] rounded-full px-14 py-5 text-xl font-medium mt-6 transition-colors"
-        >
-          Decouvrir Aura
-        </button>
-        <div className="flex justify-center gap-8 mt-8 text-white/70 text-sm flex-wrap">
-          {trustItems.map((item) => {
-            const Icon = item.icon;
-            return (
-              <span key={item.label} className="inline-flex items-center gap-2">
-                <Icon size={18} />
-                {item.label}
-              </span>
-            );
-          })}
+        <div className="mt-10 flex flex-col items-center gap-4">
+          <button
+            onClick={() => document.getElementById('product')?.scrollIntoView({ behavior: 'smooth' })}
+            className="bg-white text-[#1A1A1A] hover:bg-white/90 rounded-full px-12 py-4 text-lg font-medium transition-colors"
+          >
+            Decouvrir Aura — 19,90&euro;
+          </button>
+          <p className="text-white/40 text-sm">
+            Livraison offerte des 45&euro; · Satisfaite ou remboursee 30 jours
+          </p>
         </div>
       </div>
     </section>
