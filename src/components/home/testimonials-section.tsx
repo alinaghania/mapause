@@ -94,7 +94,7 @@ export function TestimonialsSection() {
           Temoignages
         </p>
         <h2 className="font-[var(--font-heading)] text-4xl text-center mt-4">
-          1000+ femmes nous font confiance
+          Elles parlent d&apos;Aura
         </h2>
         <div className="flex items-center justify-center gap-2 mt-4">
           <div className="flex gap-0.5">

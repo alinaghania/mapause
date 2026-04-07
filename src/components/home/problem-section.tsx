@@ -7,19 +7,19 @@ const cards = [
     number: "01",
     title: "La nuit",
     description:
-      "Les bouffees nocturnes perturbent votre sommeil et votre recuperation.",
+      "3h du matin. Les draps sont trempes. Le sommeil, brise.",
   },
   {
     number: "02",
     title: "Au quotidien",
     description:
-      "Au bureau, en reunion, en public... la chaleur arrive sans prevenir.",
+      "En pleine reunion. Le rouge qui monte. L'envie de disparaitre.",
   },
   {
     number: "03",
     title: "L'inconfort",
     description:
-      "Rougeurs, sueurs, palpitations : votre corps reagit, vous subissez.",
+      "La chaleur qui envahit. Le corps qui reagit. Et vous, qui subissez.",
   },
 ];
 
@@ -34,7 +34,7 @@ export function ProblemSection() {
           transition={{ duration: 0.6 }}
           className="font-[var(--font-heading)] text-3xl md:text-4xl lg:text-5xl max-w-3xl mx-auto text-center text-charcoal leading-tight"
         >
-          Elles arrivent sans prevenir. Vous n&apos;avez rien demande.
+          Ce moment ou tout bascule
         </motion.h2>
 
         <motion.p
@@ -44,9 +44,7 @@ export function ProblemSection() {
           transition={{ duration: 0.6, delay: 0.15 }}
           className="text-center text-muted-foreground max-w-2xl mx-auto text-lg mt-6 leading-relaxed"
         >
-          <span className="font-semibold text-charcoal">8 femmes sur 10</span> souffrent de bouffees de chaleur.
-          Au bureau, en reunion, la nuit. La chaleur envahit tout, le coeur s&apos;emballe,
-          la gene s&apos;installe. Vous n&apos;etes pas seule.
+          La chaleur monte sans prevenir. Le coeur s&apos;emballe. La gene s&apos;installe. <span className="font-semibold text-charcoal">8 femmes sur 10</span> connaissent ces instants. Vous meritez mieux qu&apos;un eventail.
         </motion.p>
 
         <motion.div
@@ -58,7 +56,7 @@ export function ProblemSection() {
         >
           <Image
             src="/images/woman-closeup.png"
-            alt="Femme utilisant la brume MAPAUSE, les yeux fermés, sereine"
+            alt="Femme utilisant la brume Aura de Mapause, les yeux fermes, sereine"
             width={1200}
             height={500}
             className="w-full max-h-[500px] object-cover rounded-2xl shadow-lg"

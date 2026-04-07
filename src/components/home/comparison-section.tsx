@@ -90,7 +90,7 @@ export function ComparisonSection() {
                 <th className="py-4 px-6 font-semibold text-center">
                   <span className="inline-flex items-center gap-1.5">
                     <Star className="h-4 w-4 fill-current" />
-                    MAPAUSE
+                    AURA
                   </span>
                 </th>
                 <th className="py-4 px-6 font-semibold text-center">

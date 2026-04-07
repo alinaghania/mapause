@@ -16,7 +16,7 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="tracking-[0.2em] uppercase text-sm text-[#344E41] font-medium"
             >
-              La 1ere brume anti-bouffees de chaleur en France
+              AURA DE MAPAUSE
             </motion.p>
 
             <motion.h1
@@ -36,8 +36,7 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-lg text-muted-foreground max-w-md mt-6 leading-relaxed"
             >
-              En 10 secondes, la chaleur s&apos;apaise, les rougeurs s&apos;estompent.
-              Vous reprenez le controle, naturellement.
+              Une vague de fraicheur en 10 secondes. Les rougeurs s&apos;apaisent, le coeur ralentit, vous reprenez le controle. Naturellement.
             </motion.p>
 
             <motion.div
@@ -50,7 +49,7 @@ export function HeroSection() {
                 onClick={() => document.getElementById('product')?.scrollIntoView({ behavior: 'smooth' })}
                 className="bg-[#1A1A1A] text-white rounded-full h-14 px-10 text-base font-medium hover:bg-[#333] transition-colors shadow-lg"
               >
-                Je veux ma brume - 19,90&euro;
+                Decouvrir Aura - 19,90&euro;
               </button>
               <button
                 onClick={() => document.getElementById('problem')?.scrollIntoView({ behavior: 'smooth' })}
@@ -80,7 +79,7 @@ export function HeroSection() {
             <div className="relative aspect-[4/5] w-full max-w-lg rounded-2xl overflow-hidden">
               <Image
                 src="/images/packshot-nature.png"
-                alt="MAPAUSE brume rafraîchissante dans un cadre naturel"
+                alt="Aura de Mapause brume rafraichissante dans un cadre naturel"
                 fill
                 className="object-cover"
                 priority

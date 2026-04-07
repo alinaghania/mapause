@@ -19,9 +19,9 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "MAPAUSE | Brume SOS Fraicheur Anti-Bouffees de Chaleur",
+  title: "Aura de Mapause | Brume Fraicheur Anti-Bouffees de Chaleur",
   description:
-    "Quand la chaleur monte, Mapause. Brume rafraichissante aux hydrolats bio de Sauge Sclaree et Menthe Poivree. Sensation de fraicheur immediate. Fabriquee en France.",
+    "Aura de Mapause. Une brumisation, et la chaleur s'efface. Brume rafraichissante aux hydrolats bio. Fabriquee en France.",
   keywords: [
     "bouffees de chaleur",
     "menopause",

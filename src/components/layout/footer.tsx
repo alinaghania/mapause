@@ -37,7 +37,7 @@ export function Footer() {
               MAPAUSE
             </span>
             <p className="mt-3 font-[var(--font-heading)] text-base italic text-white/80">
-              Quand la chaleur monte, Mapause.
+              Une brumisation, et la chaleur s&apos;efface.
             </p>
             <p className="mt-4 text-sm text-white/50 leading-relaxed max-w-xs">
               Brume rafraichissante aux hydrolats bio, formulee en France pour

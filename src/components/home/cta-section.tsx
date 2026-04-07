@@ -15,16 +15,16 @@ export function CtaSection() {
       <div className="max-w-screen-xl mx-auto px-6">
         <Image
           src="/images/packshot-spa.png"
-          alt="MAPAUSE brume SOS fraîcheur"
+          alt="Aura de Mapause brume rafraichissante"
           width={160}
           height={160}
           className="h-40 w-auto mx-auto mb-6 brightness-110 drop-shadow-[0_0_30px_rgba(255,255,255,0.3)]"
         />
         <h2 className="font-[var(--font-heading)] text-5xl md:text-6xl text-white">
-          Votre premiere brume vous attend
+          Aura vous attend
         </h2>
         <p className="text-white/70 max-w-xl mx-auto mt-4">
-          Livraison offerte d&egrave;s 45&euro;. Satisfaite ou remboursee 30 jours.
+          Livraison offerte. Satisfaite ou remboursee 30 jours. Sans engagement.
         </p>
         <p className="text-3xl font-bold font-[var(--font-heading)] mt-8">
           A partir de 19,90&euro;
@@ -33,7 +33,7 @@ export function CtaSection() {
           onClick={() => document.getElementById('product')?.scrollIntoView({ behavior: 'smooth' })}
           className="inline-block bg-white text-[#1A1A1A] hover:bg-[#F5F5F3] rounded-full px-14 py-5 text-xl font-medium mt-6 transition-colors"
         >
-          Oui, je veux ma brume
+          Decouvrir Aura
         </button>
         <div className="flex justify-center gap-8 mt-8 text-white/70 text-sm flex-wrap">
           {trustItems.map((item) => {

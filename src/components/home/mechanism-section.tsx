@@ -3,30 +3,30 @@ const layers = [
     dotColor: "bg-[#C97070]",
     label: "INSTANTANE",
     step: "01",
-    title: "Fraicheur Immediate",
+    title: "Le signal de froid",
     time: "0-10 secondes",
     description:
-      "Le Menthyl Lactate et le L-Menthol activent le recepteur TRPM8. Signal de froid envoye au cerveau instantanement.",
+      "Le Menthyl Lactate active vos recepteurs TRPM8. Votre cerveau recoit un signal de froid instantane. La sensation de chaleur s'efface en secondes.",
     tags: ["Menthyl Lactate", "L-Menthol"],
   },
   {
     dotColor: "bg-[#344E41]",
     label: "PHYSIQUE",
     step: "02",
-    title: "Action Vasculaire",
+    title: "La reponse vasculaire",
     time: "10 sec - 5 min",
     description:
-      "L'Hamamelis resserre les vaisseaux dilates. L'Aloe Vera refroidit par evaporation. Reduction visible des rougeurs.",
+      "L'Hamamelis resserre les vaisseaux dilates — le mecanisme exact inverse de la bouffee. L'Aloe Vera amplifie le refroidissement par evaporation.",
     tags: ["Hamamelis", "Aloe Vera"],
   },
   {
     dotColor: "bg-[#8B6F5E]",
     label: "PROFOND",
     step: "03",
-    title: "Regulation Hormonale",
+    title: "L'equilibre retrouve",
     time: "Usage regulier",
     description:
-      "La Sauge Sclaree reduit le cortisol et augmente la serotonine. Reduction progressive de la frequence des bouffees.",
+      "La Sauge Sclaree agit en profondeur : elle reduit le cortisol et stimule la serotonine. Avec le temps, les bouffees deviennent moins frequentes, moins intenses.",
     tags: ["Sauge Sclaree"],
   },
 ];
@@ -39,10 +39,10 @@ export function MechanismSection() {
           Science
         </p>
         <h2 className="font-[var(--font-heading)] text-4xl text-center mt-4">
-          Comment ca marche ?
+          Comment Aura agit
         </h2>
         <p className="text-center text-muted-foreground max-w-xl mx-auto mt-4">
-          3 couches d&apos;action en un seul geste
+          Chaque vaporisation declenche une cascade de fraicheur en 3 temps.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">

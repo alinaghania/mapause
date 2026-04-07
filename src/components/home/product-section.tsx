@@ -28,8 +28,8 @@ export function ProductSection() {
   function handleAddToCart() {
     addItem(
       {
-        slug: "mapause-brume-sos-fraicheur",
-        name: "MAPAUSE - Brume SOS Fraicheur",
+        slug: "aura-de-mapause",
+        name: "Aura de Mapause",
         description: "Brume rafraichissante anti-bouffees de chaleur",
         price: currentFormat.cents,
         format: selectedFormat as "50ml" | "100ml",
@@ -64,7 +64,7 @@ export function ProductSection() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="font-[var(--font-heading)] text-4xl md:text-5xl text-center text-[#1A1A1A] mt-4"
         >
-          Votre alliee anti-bouffees de chaleur
+          Aura de Mapause
         </motion.h2>
 
         <motion.p
@@ -74,8 +74,7 @@ export function ProductSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-center text-foreground/60 max-w-2xl mx-auto mt-4 text-lg leading-relaxed"
         >
-          La seule brume qui agit sur 3 mecanismes simultanes de la bouffee de
-          chaleur. Fraicheur instantanee, action vasculaire, regulation hormonale.
+          La premiere brume francaise qui agit sur les 3 mecanismes de la bouffee de chaleur.
         </motion.p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12 items-center">
@@ -89,7 +88,7 @@ export function ProductSection() {
             <div className="relative aspect-[3/4] rounded-2xl overflow-hidden">
               <Image
                 src="/images/packshot-spa.png"
-                alt="MAPAUSE brume SOS fraîcheur"
+                alt="Aura de Mapause brume rafraichissante"
                 fill
                 className="object-cover"
               />
@@ -104,15 +103,18 @@ export function ProductSection() {
             transition={{ duration: 0.6, delay: 0.25 }}
           >
             <div className="flex items-center gap-3">
-              <h3 className="font-[var(--font-heading)] text-3xl font-semibold text-[#1A1A1A]">
-                MAPAUSE - Brume SOS Fraicheur
-              </h3>
+              <div>
+                <h3 className="font-[var(--font-heading)] text-4xl font-semibold text-[#1A1A1A]">
+                  Aura
+                </h3>
+                <p className="text-sm text-foreground/50 mt-1">par Mapause</p>
+              </div>
               <span className="bg-[#344E41] text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
                 Nouveaute
               </span>
             </div>
             <p className="text-foreground/70 mt-2">
-              Quand la chaleur monte, Mapause vous rafraichit en 10 secondes.
+              Une brumisation, et la chaleur s&apos;efface.
             </p>
 
             {/* Format selector */}

@@ -40,8 +40,11 @@ export function IngredientsPreview() {
         Formule
       </p>
       <h2 className="font-[var(--font-heading)] text-4xl text-center mt-4">
-        Des actifs scientifiquement valides
+        La formule Aura
       </h2>
+      <p className="text-center text-muted-foreground max-w-2xl mx-auto mt-2 text-lg leading-relaxed">
+        10 actifs. Zero superflu. Chaque ingredient a une raison scientifique d&apos;etre la.
+      </p>
 
       <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mt-8 px-6 max-w-screen-xl mx-auto">
         {ingredients.map((item) => (
