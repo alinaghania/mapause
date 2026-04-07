@@ -25,7 +25,7 @@ export function CartSheet({ open, onOpenChange }: CartSheetProps) {
     <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetContent className="flex flex-col w-full sm:max-w-md">
         <SheetHeader className="pb-6">
-          <SheetTitle className="font-[var(--font-serif)] text-2xl font-light italic">
+          <SheetTitle className="font-[var(--font-heading)] text-2xl font-light italic">
             Panier
           </SheetTitle>
         </SheetHeader>
@@ -39,16 +39,15 @@ export function CartSheet({ open, onOpenChange }: CartSheetProps) {
             <div className="flex-1 overflow-y-auto space-y-6">
               {items.map((item) => (
                 <div
-                  key={`${item.product.slug}-${item.size}`}
+                  key={`${item.product.slug}-${item.format}`}
                   className="flex gap-4"
                 >
-                  <div className="relative h-28 w-22 shrink-0 overflow-hidden bg-accent">
+                  <div className="relative h-28 w-22 shrink-0 overflow-hidden rounded-xl bg-champagne">
                     <Image
-                      src={item.product.images[0]}
+                      src="/images/packshot-spa.png"
                       alt={item.product.name}
                       fill
                       className="object-cover"
-                      sizes="88px"
                     />
                   </div>
                   <div className="flex flex-1 flex-col justify-between">
@@ -56,11 +55,11 @@ export function CartSheet({ open, onOpenChange }: CartSheetProps) {
                       <div>
                         <h4 className="text-sm tracking-wide">{item.product.name}</h4>
                         <p className="text-[11px] text-muted-foreground mt-1">
-                          Taille: {item.size}
+                          Format: {item.format}
                         </p>
                       </div>
                       <button
-                        onClick={() => removeItem(item.product.slug, item.size)}
+                        onClick={() => removeItem(item.product.slug, item.format)}
                         className="text-muted-foreground hover:text-foreground"
                       >
                         <X className="h-3.5 w-3.5" />
@@ -69,18 +68,18 @@ export function CartSheet({ open, onOpenChange }: CartSheetProps) {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
                         <button
-                          className="h-7 w-7 border flex items-center justify-center"
+                          className="h-7 w-7 border rounded-full flex items-center justify-center hover:bg-sage-50 transition-colors"
                           onClick={() =>
-                            updateQuantity(item.product.slug, item.size, item.quantity - 1)
+                            updateQuantity(item.product.slug, item.format, item.quantity - 1)
                           }
                         >
                           <Minus className="h-2.5 w-2.5" />
                         </button>
                         <span className="text-sm">{item.quantity}</span>
                         <button
-                          className="h-7 w-7 border flex items-center justify-center"
+                          className="h-7 w-7 border rounded-full flex items-center justify-center hover:bg-sage-50 transition-colors"
                           onClick={() =>
-                            updateQuantity(item.product.slug, item.size, item.quantity + 1)
+                            updateQuantity(item.product.slug, item.format, item.quantity + 1)
                           }
                         >
                           <Plus className="h-2.5 w-2.5" />
@@ -104,7 +103,7 @@ export function CartSheet({ open, onOpenChange }: CartSheetProps) {
               </div>
               <Button
                 nativeButton={false}
-                className="w-full h-12 rounded-none text-[12px] tracking-[0.3em] uppercase"
+                className="w-full h-12 rounded-full bg-sage-600 hover:bg-sage-700 text-white text-sm tracking-wide"
                 render={<Link href="/cart" onClick={() => onOpenChange(false)} />}
               >
                 Voir le panier

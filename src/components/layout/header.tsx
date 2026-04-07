@@ -8,8 +8,10 @@ import { CartSheet } from "@/components/cart/cart-sheet";
 import { useState } from "react";
 
 const navItems = [
-  { label: "Tops Brodes", href: "/products?category=tops" },
-  { label: "Accessoires", href: "/products?category=accessoires" },
+  { label: "Notre Histoire", href: "/notre-histoire" },
+  { label: "Ingredients", href: "/ingredients" },
+  { label: "Temoignages", href: "/temoignages" },
+  { label: "FAQ", href: "/faq" },
 ];
 
 export function Header() {
@@ -25,7 +27,7 @@ export function Header() {
         </Button>
 
         <Link href="/" className="absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0">
-          <span className="font-[var(--font-serif)] text-2xl tracking-[0.3em] uppercase">Sona</span>
+          <span className="font-[var(--font-heading)] text-2xl tracking-[0.2em] uppercase">MAPAUSE</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-10 ml-16">

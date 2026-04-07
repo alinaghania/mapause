@@ -4,8 +4,7 @@ export interface Product {
   name: string;
   description: string;
   price: number;
-  category: "tops" | "accessoires";
-  sizes: string[];
+  format: "50ml" | "100ml";
   images: string[];
   featured: boolean;
   createdAt: Date;
@@ -13,6 +12,6 @@ export interface Product {
 
 export interface CartItem {
   product: Product;
-  size: string;
+  format: string;
   quantity: number;
 }

@@ -1,28 +1,27 @@
-import { getDb } from "@/lib/mongodb";
 import { HeroSection } from "@/components/home/hero-section";
-import { MarqueeBanner } from "@/components/home/marquee-banner";
-import { FeaturedProducts } from "@/components/home/featured-products";
-import { EditorialSection } from "@/components/home/editorial-section";
-import { CategoriesSection } from "@/components/home/categories-section";
-import type { Product } from "@/lib/types";
+import { TrustBanner } from "@/components/home/trust-banner";
+import { ProblemSection } from "@/components/home/problem-section";
+import { ProductSection } from "@/components/home/product-section";
+import { MechanismSection } from "@/components/home/mechanism-section";
+import { IngredientsPreview } from "@/components/home/ingredients-preview";
+import { ComparisonSection } from "@/components/home/comparison-section";
+import { TestimonialsSection } from "@/components/home/testimonials-section";
+import { FaqSection } from "@/components/home/faq-section";
+import { CtaSection } from "@/components/home/cta-section";
 
-export const dynamic = "force-dynamic";
-
-export default async function HomePage() {
-  const db = await getDb();
-  const featured = (await db
-    .collection("products")
-    .find({ featured: true })
-    .limit(8)
-    .toArray()) as unknown as Product[];
-
+export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <MarqueeBanner />
-      <FeaturedProducts products={JSON.parse(JSON.stringify(featured))} />
-      <EditorialSection />
-      <CategoriesSection />
+      <TrustBanner />
+      <ProblemSection />
+      <ProductSection />
+      <MechanismSection />
+      <IngredientsPreview />
+      <ComparisonSection />
+      <TestimonialsSection />
+      <FaqSection />
+      <CtaSection />
     </>
   );
 }

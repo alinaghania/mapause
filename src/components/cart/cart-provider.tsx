@@ -5,9 +5,9 @@ import type { Product, CartItem } from "@/lib/types";
 
 interface CartContextType {
   items: CartItem[];
-  addItem: (product: Product, size: string) => void;
-  removeItem: (slug: string, size: string) => void;
-  updateQuantity: (slug: string, size: string, quantity: number) => void;
+  addItem: (product: Product, format: string) => void;
+  removeItem: (slug: string, format: string) => void;
+  updateQuantity: (slug: string, format: string, quantity: number) => void;
   clearCart: () => void;
   totalItems: number;
   totalPrice: number;
@@ -20,7 +20,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    const stored = localStorage.getItem("sona-cart");
+    const stored = localStorage.getItem("mapause-cart");
     if (stored) {
       try {
         setItems(JSON.parse(stored));
@@ -33,41 +33,41 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     if (loaded) {
-      localStorage.setItem("sona-cart", JSON.stringify(items));
+      localStorage.setItem("mapause-cart", JSON.stringify(items));
     }
   }, [items, loaded]);
 
-  const addItem = useCallback((product: Product, size: string) => {
+  const addItem = useCallback((product: Product, format: string) => {
     setItems((prev) => {
       const existing = prev.find(
-        (i) => i.product.slug === product.slug && i.size === size
+        (i) => i.product.slug === product.slug && i.format === format
       );
       if (existing) {
         return prev.map((i) =>
-          i.product.slug === product.slug && i.size === size
+          i.product.slug === product.slug && i.format === format
             ? { ...i, quantity: i.quantity + 1 }
             : i
         );
       }
-      return [...prev, { product, size, quantity: 1 }];
+      return [...prev, { product, format, quantity: 1 }];
     });
   }, []);
 
-  const removeItem = useCallback((slug: string, size: string) => {
+  const removeItem = useCallback((slug: string, format: string) => {
     setItems((prev) =>
-      prev.filter((i) => !(i.product.slug === slug && i.size === size))
+      prev.filter((i) => !(i.product.slug === slug && i.format === format))
     );
   }, []);
 
   const updateQuantity = useCallback(
-    (slug: string, size: string, quantity: number) => {
+    (slug: string, format: string, quantity: number) => {
       if (quantity <= 0) {
-        removeItem(slug, size);
+        removeItem(slug, format);
         return;
       }
       setItems((prev) =>
         prev.map((i) =>
-          i.product.slug === slug && i.size === size ? { ...i, quantity } : i
+          i.product.slug === slug && i.format === format ? { ...i, quantity } : i
         )
       );
     },

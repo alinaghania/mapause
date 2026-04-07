@@ -2,14 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Minus, Plus, X } from "lucide-react";
+import { Minus, Plus, X, Truck, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/components/cart/cart-provider";
 import { formatPrice } from "@/lib/utils";
 
 export default function CartPage() {
-  const { items, removeItem, updateQuantity, totalPrice, clearCart } =
-    useCart();
+  const { items, removeItem, updateQuantity, totalPrice, clearCart } = useCart();
 
   async function handleCheckout() {
     try {
@@ -21,8 +20,7 @@ export default function CartPage() {
             name: i.product.name,
             price: i.product.price,
             quantity: i.quantity,
-            size: i.size,
-            image: i.product.images[0],
+            format: i.format,
           })),
         }),
       });
@@ -38,50 +36,67 @@ export default function CartPage() {
   if (items.length === 0) {
     return (
       <div className="mx-auto max-w-screen-2xl px-6 lg:px-12 py-32 text-center">
-        <h1 className="font-[var(--font-serif)] text-4xl font-light italic">
+        <h1 className="font-[var(--font-heading)] text-4xl md:text-5xl">
           Votre panier
         </h1>
-        <p className="mt-6 text-sm text-muted-foreground">
-          Votre panier est vide.
-        </p>
-        <Button nativeButton={false} className="mt-10 h-12 px-12 rounded-none text-[12px] tracking-[0.3em] uppercase" render={<Link href="/products" />}>
-          Decouvrir la collection
+        <p className="mt-6 text-muted-foreground">Votre panier est vide.</p>
+        <Button
+          nativeButton={false}
+          className="mt-10 h-12 px-12 rounded-full bg-sage-600 hover:bg-sage-700 text-white"
+          render={<Link href="/" />}
+        >
+          Decouvrir Mapause
         </Button>
       </div>
     );
   }
 
+  const freeShipping = totalPrice >= 4500;
+
   return (
     <div className="mx-auto max-w-3xl px-6 lg:px-12 py-16">
-      <h1 className="font-[var(--font-serif)] text-4xl font-light italic text-center mb-12">
+      <h1 className="font-[var(--font-heading)] text-4xl text-center mb-12">
         Votre panier
       </h1>
+
+      {!freeShipping && (
+        <div className="mb-8 bg-sage-50 rounded-2xl p-4 text-center text-sm">
+          <Truck className="inline h-4 w-4 mr-2 text-sage-600" />
+          Plus que <strong>{formatPrice(4500 - totalPrice)}</strong> pour la livraison offerte
+        </div>
+      )}
+
+      {freeShipping && (
+        <div className="mb-8 bg-sage-100 rounded-2xl p-4 text-center text-sm text-sage-800 font-medium">
+          <Truck className="inline h-4 w-4 mr-2" />
+          Livraison offerte !
+        </div>
+      )}
 
       <div className="space-y-8">
         {items.map((item) => (
           <div
-            key={`${item.product.slug}-${item.size}`}
-            className="flex gap-6 pb-8 border-b"
+            key={`${item.product.slug}-${item.format}`}
+            className="flex gap-6 pb-8 border-b border-sage-100"
           >
-            <div className="relative h-36 w-28 shrink-0 overflow-hidden bg-accent">
+            <div className="relative h-36 w-28 shrink-0 overflow-hidden rounded-xl bg-champagne">
               <Image
-                src={item.product.images[0]}
+                src="/images/packshot-spa.png"
                 alt={item.product.name}
                 fill
                 className="object-cover"
-                sizes="112px"
               />
             </div>
             <div className="flex flex-1 flex-col justify-between">
               <div className="flex justify-between">
                 <div>
-                  <h3 className="text-sm tracking-wide">{item.product.name}</h3>
-                  <p className="mt-1 text-[11px] tracking-[0.15em] uppercase text-muted-foreground">
-                    Taille: {item.size}
+                  <h3 className="font-medium tracking-wide">{item.product.name}</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    Format: {item.format}
                   </p>
                 </div>
                 <button
-                  onClick={() => removeItem(item.product.slug, item.size)}
+                  onClick={() => removeItem(item.product.slug, item.format)}
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
                   <X className="h-4 w-4" />
@@ -90,24 +105,24 @@ export default function CartPage() {
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-4">
                   <button
-                    className="h-8 w-8 border flex items-center justify-center hover:bg-accent transition-colors"
+                    className="h-8 w-8 border rounded-full flex items-center justify-center hover:bg-sage-50 transition-colors"
                     onClick={() =>
-                      updateQuantity(item.product.slug, item.size, item.quantity - 1)
+                      updateQuantity(item.product.slug, item.format, item.quantity - 1)
                     }
                   >
                     <Minus className="h-3 w-3" />
                   </button>
                   <span className="text-sm w-6 text-center">{item.quantity}</span>
                   <button
-                    className="h-8 w-8 border flex items-center justify-center hover:bg-accent transition-colors"
+                    className="h-8 w-8 border rounded-full flex items-center justify-center hover:bg-sage-50 transition-colors"
                     onClick={() =>
-                      updateQuantity(item.product.slug, item.size, item.quantity + 1)
+                      updateQuantity(item.product.slug, item.format, item.quantity + 1)
                     }
                   >
                     <Plus className="h-3 w-3" />
                   </button>
                 </div>
-                <p className="text-sm tracking-wide">
+                <p className="font-medium">
                   {formatPrice(item.product.price * item.quantity)}
                 </p>
               </div>
@@ -117,16 +132,21 @@ export default function CartPage() {
       </div>
 
       <div className="mt-10 space-y-6">
-        <div className="flex items-center justify-between">
-          <span className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">
+        <div className="flex items-center justify-between text-lg">
+          <span className="text-sm tracking-[0.15em] uppercase text-muted-foreground">
             Total
           </span>
-          <span className="text-lg tracking-wide">{formatPrice(totalPrice)}</span>
+          <span className="font-[var(--font-heading)] text-2xl">{formatPrice(totalPrice)}</span>
+        </div>
+
+        <div className="flex items-center justify-center gap-6 text-xs text-muted-foreground">
+          <span className="flex items-center gap-1"><Shield className="h-3.5 w-3.5" /> Paiement securise</span>
+          <span className="flex items-center gap-1"><Truck className="h-3.5 w-3.5" /> {freeShipping ? "Livraison offerte" : "Livraison des 45EUR"}</span>
         </div>
 
         <Button
           size="lg"
-          className="w-full h-14 rounded-none text-[12px] tracking-[0.3em] uppercase"
+          className="w-full h-14 rounded-full bg-sage-600 hover:bg-sage-700 text-white text-base font-medium tracking-wide"
           onClick={handleCheckout}
         >
           Passer la commande
@@ -134,7 +154,7 @@ export default function CartPage() {
 
         <button
           onClick={clearCart}
-          className="w-full text-center text-[11px] tracking-[0.15em] uppercase text-muted-foreground hover:text-foreground transition-colors"
+          className="w-full text-center text-sm text-muted-foreground hover:text-foreground transition-colors underline"
         >
           Vider le panier
         </button>

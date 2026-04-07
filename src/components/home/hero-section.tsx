@@ -1,59 +1,96 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import { motion } from "motion/react";
+import { Truck, Shield } from "lucide-react";
 
 export function HeroSection() {
   return (
-    <section className="relative h-screen w-full overflow-hidden">
-      <motion.div
-        initial={{ scale: 1.15 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 2, ease: [0.25, 0.1, 0.25, 1] }}
-        className="absolute inset-0"
-      >
-        <Image
-          src="/products/top-noir-dore.png"
-          alt="SONA"
-          fill
-          className="object-cover object-top"
-          priority
-          sizes="100vw"
-        />
-      </motion.div>
-      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/70" />
-      <div className="relative z-10 flex h-full flex-col items-center justify-end text-center text-white pb-24 px-6">
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.7 }}
-          className="font-[var(--font-serif)] text-5xl sm:text-7xl lg:text-8xl font-light italic tracking-wide"
-        >
-          Porte avec intention
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.2 }}
-          className="mt-6 max-w-md text-sm text-white/80 leading-relaxed tracking-wide"
-        >
-          Chaque fil raconte une histoire. Chaque perle porte un heritage.
-          Des pieces brodees a la main par des artisans indiens,
-          pour celles qui savent ce qu'elles portent.
-        </motion.p>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.5 }}
-        >
-          <Link
-            href="/products"
-            className="mt-10 inline-block border border-white px-12 py-4 text-[12px] tracking-[0.3em] uppercase text-white hover:bg-white hover:text-black transition-all duration-500"
+    <section className="gradient-hero w-full overflow-hidden">
+      <div className="mx-auto max-w-7xl px-6 lg:px-12 py-20 lg:py-32">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left side - Text content */}
+          <div>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="tracking-[0.2em] uppercase text-xs text-sage-600"
+            >
+              BRUME RAFRAICHISSANTE VISAGE &amp; CORPS
+            </motion.p>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.25 }}
+              className="font-[var(--font-heading)] text-5xl md:text-6xl lg:text-7xl text-charcoal mt-6 leading-tight"
+            >
+              Quand la chaleur monte,
+              <br />
+              <span className="italic">Mapause.</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="text-lg text-muted-foreground max-w-md mt-6 leading-relaxed"
+            >
+              Sensation de fraicheur immediate en 10 secondes. Aux hydrolats bio
+              de Sauge Sclaree et Menthe Poivree.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.55 }}
+              className="mt-8 flex flex-wrap gap-4"
+            >
+              <button className="bg-sage-600 text-white rounded-full px-8 py-3 text-sm font-medium hover:bg-sage-700 transition-colors">
+                Decouvrir
+              </button>
+              <button className="bg-rose-gold text-charcoal rounded-full px-8 py-3 text-sm font-medium hover:opacity-90 transition-opacity">
+                Commander - 19,90&euro;
+              </button>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.7 }}
+              className="mt-6 flex items-center gap-4 text-xs text-muted-foreground"
+            >
+              <span className="flex items-center gap-1.5">
+                <Truck className="size-3.5" />
+                Livraison offerte des 45&euro;
+              </span>
+              <span className="text-sage-300">|</span>
+              <span className="flex items-center gap-1.5">
+                <Shield className="size-3.5" />
+                Satisfaite ou remboursee 30j
+              </span>
+            </motion.div>
+          </div>
+
+          {/* Right side - Product placeholder */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="flex justify-center lg:justify-end"
           >
-            Decouvrir
-          </Link>
-        </motion.div>
+            <div className="relative aspect-[3/4] w-full max-w-md rounded-2xl overflow-hidden">
+              <Image
+                src="/images/packshot-nature.png"
+                alt="MAPAUSE brume rafraîchissante dans un cadre naturel"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
