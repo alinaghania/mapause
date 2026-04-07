@@ -1,7 +1,6 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
@@ -13,8 +12,6 @@ const testimonials = [
     name: "Marie D.",
     age: 52,
     city: "Lyon",
-    image: "/images/woman-work.png",
-    imageAlt: "Femme au bureau utilisant discrètement la brume MAPAUSE",
   },
   {
     quote:
@@ -22,8 +19,6 @@ const testimonials = [
     name: "Sophie L.",
     age: 48,
     city: "Paris",
-    image: "/images/woman-bathroom.png",
-    imageAlt: "Femme utilisant la brume MAPAUSE dans sa salle de bain",
   },
   {
     quote:
@@ -31,8 +26,6 @@ const testimonials = [
     name: "Isabelle M.",
     age: 55,
     city: "Bordeaux",
-    image: "/images/woman-garden.png",
-    imageAlt: "Femme dans un jardin utilisant la brume MAPAUSE",
   },
   {
     quote:
@@ -47,8 +40,6 @@ const testimonials = [
     name: "Nathalie P.",
     age: 49,
     city: "Toulouse",
-    image: "/images/woman-cafe.png",
-    imageAlt: "Femme élégante au café utilisant la brume MAPAUSE",
   },
   {
     quote:
@@ -56,8 +47,6 @@ const testimonials = [
     name: "Veronique B.",
     age: 57,
     city: "Nantes",
-    image: "/images/woman-livingroom.png",
-    imageAlt: "Femme se relaxant dans son salon avec la brume MAPAUSE",
   },
 ];
 
@@ -99,7 +88,7 @@ export function TestimonialsSection() {
   }, [emblaApi, onSelect]);
 
   return (
-    <section className="gradient-rose py-20 lg:py-28">
+    <section className="gradient-rose py-16 lg:py-20">
       <div className="max-w-screen-xl mx-auto px-6">
         <p className="tracking-[0.2em] uppercase text-xs text-sage-600 text-center">
           Temoignages
@@ -124,19 +113,9 @@ export function TestimonialsSection() {
                   key={t.name}
                   className="min-w-0 shrink-0 grow-0 basis-full md:basis-1/2 lg:basis-1/3 px-3"
                 >
-                  <div className="bg-white rounded-xl shadow-md border border-sage-100 min-h-[400px] h-full flex flex-col overflow-hidden">
-                    {t.image && (
-                      <div className="relative h-52 w-full">
-                        <Image
-                          src={t.image}
-                          alt={t.imageAlt || ""}
-                          fill
-                          className="object-cover rounded-t-xl"
-                        />
-                      </div>
-                    )}
-                    <div className="p-8 pb-6 flex flex-col flex-1">
-                    <div className="flex gap-1">
+                  <div className="bg-white rounded-xl shadow-sm border border-sage-200 p-8 h-full flex flex-col">
+                    <div className="h-12 w-12 rounded-full bg-sage-100 flex items-center justify-center text-sage-700 font-semibold text-lg">{t.name[0]}</div>
+                    <div className="flex gap-1 mt-4">
                       {Array.from({ length: 5 }).map((_, i) => (
                         <Star
                           key={i}
@@ -150,7 +129,6 @@ export function TestimonialsSection() {
                     <p className="font-semibold text-base mt-6 pb-2">
                       {t.name}, {t.age} ans, {t.city}
                     </p>
-                    </div>
                   </div>
                 </div>
               ))}

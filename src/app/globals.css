@@ -81,7 +81,7 @@
   --secondary: #ECE0DA;
   --secondary-foreground: #2D2926;
   --muted: #F0F3EC;
-  --muted-foreground: #6B6560;
+  --muted-foreground: #5A554F;
   --accent: #DCA1A1;
   --accent-foreground: #2D2926;
   --destructive: #DC2626;
@@ -104,6 +104,9 @@
   }
   h1, h2, h3 {
     font-family: var(--font-heading);
+  }
+  h2 {
+    color: var(--foreground);
   }
 }
 

@@ -69,7 +69,7 @@ function BoolCell({ value, note }: { value: boolean; note?: string }) {
 export function ComparisonSection() {
   return (
     <section className="bg-white">
-      <div className="py-20 lg:py-28 px-6 max-w-screen-xl mx-auto">
+      <div className="py-16 lg:py-20 px-6 max-w-screen-xl mx-auto">
         <p className="tracking-[0.2em] uppercase text-xs text-sage-600 text-center">
           Comparatif
         </p>
@@ -80,7 +80,7 @@ export function ComparisonSection() {
           Pourquoi Mapause est differente
         </p>
 
-        <div className="overflow-x-auto mt-12 rounded-xl overflow-hidden">
+        <div className="overflow-x-auto mt-8 rounded-xl overflow-hidden">
           <table className="w-full min-w-[600px] text-base">
             <thead>
               <tr className="bg-sage-700 text-white">

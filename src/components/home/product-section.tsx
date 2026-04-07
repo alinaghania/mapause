@@ -23,7 +23,7 @@ export function ProductSection() {
   const currentFormat = formats.find((f) => f.id === selectedFormat)!;
 
   return (
-    <section className="bg-white w-full py-20 lg:py-28">
+    <section id="product" className="bg-white w-full py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-6">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -40,7 +40,7 @@ export function ProductSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-[var(--font-heading)] text-4xl md:text-5xl text-center text-foreground mt-4"
+          className="font-[var(--font-heading)] text-4xl md:text-5xl text-center text-foreground mt-4 italic"
         >
           Votre alliee anti-bouffees de chaleur
         </motion.h2>
@@ -50,13 +50,13 @@ export function ProductSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-center text-muted-foreground max-w-2xl mx-auto mt-4 text-lg leading-relaxed"
+          className="text-center text-foreground/60 max-w-2xl mx-auto mt-4 text-lg leading-relaxed"
         >
           La seule brume qui agit sur 3 mecanismes simultanes de la bouffee de
           chaleur. Fraicheur instantanee, action vasculaire, regulation hormonale.
         </motion.p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12 items-center">
           {/* Left - Product placeholder */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -64,12 +64,12 @@ export function ProductSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <div className="relative aspect-square bg-sage-50 rounded-3xl p-8 shadow-xl overflow-hidden">
+            <div className="relative aspect-square bg-white border border-sage-200 rounded-3xl p-8 shadow-xl overflow-hidden">
               <Image
                 src="/images/packshot-spa.png"
                 alt="MAPAUSE brume SOS fraîcheur"
                 fill
-                className="object-contain p-6"
+                className="object-cover"
               />
             </div>
           </motion.div>
@@ -82,14 +82,14 @@ export function ProductSection() {
             transition={{ duration: 0.6, delay: 0.25 }}
           >
             <div className="flex items-center gap-3">
-              <h3 className="font-[var(--font-heading)] text-3xl font-semibold text-charcoal">
+              <h3 className="font-[var(--font-heading)] text-3xl font-semibold text-foreground">
                 MAPAUSE - Brume SOS Fraicheur
               </h3>
               <span className="bg-sage-700 text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
                 Nouveaute
               </span>
             </div>
-            <p className="text-muted-foreground mt-2">
+            <p className="text-foreground/70 mt-2">
               Quand la chaleur monte, Mapause vous rafraichit en 10 secondes.
             </p>
 
@@ -111,17 +111,17 @@ export function ProductSection() {
             </div>
 
             {/* Price */}
-            <p className="text-4xl font-[var(--font-heading)] font-bold text-sage-800 mt-6">
+            <p className="text-4xl font-[var(--font-heading)] font-bold text-foreground mt-6">
               {currentFormat.price}&euro;
             </p>
 
             {/* Add to cart */}
-            <button className="w-full bg-sage-700 hover:bg-sage-800 text-white rounded-full h-16 text-lg font-semibold transition-colors mt-6 shadow-lg">
+            <button className="w-full bg-[#5C7650] hover:bg-[#4A6340] text-white rounded-full h-16 text-lg font-semibold transition-colors mt-6 shadow-lg">
               Ajouter au panier
             </button>
 
             {/* Trust line */}
-            <div className="flex items-center justify-center gap-4 mt-3 text-xs text-muted-foreground">
+            <div className="flex items-center justify-center gap-4 mt-3 text-sm text-foreground/60">
               <span className="flex items-center gap-1.5">
                 <Truck className="size-3.5" />
                 Livraison offerte des 45&euro;
@@ -138,7 +138,7 @@ export function ProductSection() {
               {benefits.map((benefit) => (
                 <li
                   key={benefit}
-                  className="flex items-center gap-3 text-charcoal"
+                  className="flex items-center gap-3 text-foreground"
                 >
                   <span className="bg-sage-600 text-white rounded-full p-0.5 shrink-0">
                     <Check className="size-4" />

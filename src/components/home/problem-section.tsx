@@ -2,23 +2,21 @@
 
 import Image from "next/image";
 import { motion } from "motion/react";
-import { Moon, Sun, Thermometer } from "lucide-react";
-
 const cards = [
   {
-    icon: Moon,
+    number: "01",
     title: "La nuit",
     description:
       "Les bouffees nocturnes perturbent votre sommeil et votre recuperation.",
   },
   {
-    icon: Sun,
+    number: "02",
     title: "Au quotidien",
     description:
       "Au bureau, en reunion, en public... la chaleur arrive sans prevenir.",
   },
   {
-    icon: Thermometer,
+    number: "03",
     title: "L'inconfort",
     description:
       "Rougeurs, sueurs, palpitations : votre corps reagit, vous subissez.",
@@ -27,7 +25,7 @@ const cards = [
 
 export function ProblemSection() {
   return (
-    <section className="w-full bg-ivory py-20 lg:py-28">
+    <section id="problem" className="w-full bg-ivory py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-6">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -77,10 +75,8 @@ export function ProblemSection() {
               transition={{ duration: 0.5, delay: 0.1 * index }}
               className="bg-white rounded-xl p-8 shadow-sm border border-sage-200"
             >
-              <div className="bg-sage-600 rounded-xl p-3 w-fit">
-                <card.icon className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="font-semibold text-xl mt-4 text-charcoal">
+              <span className="text-4xl font-heading text-sage-300">{card.number}</span>
+              <h3 className="font-bold text-xl mt-4 text-foreground">
                 {card.title}
               </h3>
               <p className="text-base text-muted-foreground mt-2">{card.description}</p>

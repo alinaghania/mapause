@@ -47,10 +47,16 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 0.55 }}
               className="mt-8 flex flex-wrap gap-4"
             >
-              <button className="bg-sage-700 text-white rounded-full h-14 px-10 text-base font-semibold hover:bg-sage-800 transition-colors shadow-lg">
+              <button
+                onClick={() => document.getElementById('product')?.scrollIntoView({ behavior: 'smooth' })}
+                className="bg-sage-700 text-white rounded-full h-14 px-10 text-base font-semibold hover:bg-sage-800 transition-colors shadow-lg"
+              >
                 Je veux ma brume - 19,90&euro;
               </button>
-              <button className="bg-rose-gold text-charcoal rounded-full h-14 px-10 text-base font-medium hover:opacity-90 transition-opacity">
+              <button
+                onClick={() => document.getElementById('problem')?.scrollIntoView({ behavior: 'smooth' })}
+                className="bg-rose-gold text-charcoal rounded-full h-14 px-10 text-base font-medium hover:opacity-90 transition-opacity"
+              >
                 Decouvrir
               </button>
             </motion.div>

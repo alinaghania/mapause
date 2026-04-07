@@ -1,5 +1,6 @@
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
 import { Shield, Truck, RotateCcw } from "lucide-react";
 
 const trustItems = [
@@ -10,7 +11,7 @@ const trustItems = [
 
 export function CtaSection() {
   return (
-    <section className="gradient-dark py-20 lg:py-28 text-center text-white">
+    <section className="gradient-dark py-16 lg:py-20 text-center text-white">
       <div className="max-w-screen-xl mx-auto px-6">
         <Image
           src="/images/packshot-spa.png"
@@ -28,12 +29,12 @@ export function CtaSection() {
         <p className="text-3xl font-bold font-[var(--font-heading)] mt-8">
           A partir de 19,90&euro;
         </p>
-        <Link
-          href="/products"
+        <button
+          onClick={() => document.getElementById('product')?.scrollIntoView({ behavior: 'smooth' })}
           className="inline-block bg-rose-gold text-charcoal hover:bg-rose-light rounded-full px-14 py-5 text-xl font-medium mt-6 transition-colors"
         >
           Oui, je veux ma brume
-        </Link>
+        </button>
         <div className="flex justify-center gap-8 mt-8 text-white/70 text-sm flex-wrap">
           {trustItems.map((item) => {
             const Icon = item.icon;

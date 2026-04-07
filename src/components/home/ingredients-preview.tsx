@@ -35,7 +35,7 @@ const ingredients = [
 
 export function IngredientsPreview() {
   return (
-    <section className="py-20 lg:py-28 bg-white">
+    <section className="py-16 lg:py-20 bg-white">
       <p className="tracking-[0.2em] uppercase text-xs text-sage-600 text-center">
         Formule
       </p>
@@ -43,7 +43,7 @@ export function IngredientsPreview() {
         Des actifs scientifiquement valides
       </h2>
 
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mt-12 px-6 max-w-screen-xl mx-auto">
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mt-8 px-6 max-w-screen-xl mx-auto">
         {ingredients.map((item) => (
           <div
             key={item.name}

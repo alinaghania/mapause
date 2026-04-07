@@ -1,10 +1,7 @@
-import { Zap, Waves, Brain } from "lucide-react";
-
 const layers = [
   {
-    icon: Zap,
-    iconBg: "bg-[#FCEAEA]",
-    iconColor: "text-[#C97070]",
+    dotColor: "bg-[#C97070]",
+    label: "INSTANTANE",
     step: "01",
     title: "Fraicheur Immediate",
     time: "0-10 secondes",
@@ -13,9 +10,8 @@ const layers = [
     tags: ["Menthyl Lactate", "L-Menthol"],
   },
   {
-    icon: Waves,
-    iconBg: "bg-sage-100",
-    iconColor: "text-sage-700",
+    dotColor: "bg-sage-600",
+    label: "PHYSIQUE",
     step: "02",
     title: "Action Vasculaire",
     time: "10 sec - 5 min",
@@ -24,9 +20,8 @@ const layers = [
     tags: ["Hamamelis", "Aloe Vera"],
   },
   {
-    icon: Brain,
-    iconBg: "bg-[#ECE0DA]",
-    iconColor: "text-[#8B6F5E]",
+    dotColor: "bg-[#8B6F5E]",
+    label: "PROFOND",
     step: "03",
     title: "Regulation Hormonale",
     time: "Usage regulier",
@@ -39,7 +34,7 @@ const layers = [
 export function MechanismSection() {
   return (
     <section className="bg-white">
-      <div className="py-20 lg:py-28 px-6 lg:px-12 max-w-screen-xl mx-auto">
+      <div className="py-16 lg:py-20 px-6 lg:px-12 max-w-screen-xl mx-auto">
         <p className="tracking-[0.2em] uppercase text-xs text-sage-600 text-center">
           Science
         </p>
@@ -50,9 +45,8 @@ export function MechanismSection() {
           3 couches d&apos;action en un seul geste
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
           {layers.map((layer) => {
-            const Icon = layer.icon;
             return (
               <div
                 key={layer.title}
@@ -61,10 +55,9 @@ export function MechanismSection() {
                 <span className="font-[var(--font-heading)] text-5xl text-sage-200 absolute top-4 right-6 select-none">
                   {layer.step}
                 </span>
-                <div
-                  className={`h-14 w-14 rounded-xl ${layer.iconBg} ${layer.iconColor} flex items-center justify-center`}
-                >
-                  <Icon className="h-7 w-7" />
+                <div className="flex items-center gap-2">
+                  <span className={`h-3 w-3 rounded-full ${layer.dotColor} inline-block`} />
+                  <span className="uppercase tracking-widest text-xs font-bold text-foreground/70">{layer.label}</span>
                 </div>
                 <h3 className="font-[var(--font-heading)] text-xl font-semibold mt-6">
                   {layer.title}
