@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 const testimonials = [
@@ -8,7 +7,6 @@ const testimonials = [
     name: "Marie D.",
     age: 52,
     city: "Lyon",
-    image: "/images/woman-work.png",
   },
   {
     quote:
@@ -30,7 +28,6 @@ const testimonials = [
     name: "Catherine R.",
     age: 61,
     city: "Marseille",
-    image: "/images/woman-garden.png",
   },
   {
     quote:
@@ -52,7 +49,6 @@ const testimonials = [
     name: "Anne-Marie G.",
     age: 54,
     city: "Strasbourg",
-    image: "/images/woman-cafe.png",
   },
   {
     quote:
@@ -86,9 +82,9 @@ export default function TemoignagesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="gradient-mist py-20 lg:py-28">
+      <section className="bg-[#F5F5F3] py-20 lg:py-28">
         <div className="max-w-screen-xl mx-auto px-6 text-center">
-          <p className="tracking-[0.2em] uppercase text-xs text-sage-600">
+          <p className="tracking-[0.2em] uppercase text-xs text-[#344E41]">
             Temoignages
           </p>
           <h1 className="font-[var(--font-heading)] text-5xl mt-6">
@@ -108,17 +104,8 @@ export default function TemoignagesPage() {
             {testimonials.map((t) => (
               <div
                 key={t.name}
-                className="bg-white rounded-2xl shadow-sm border border-sage-100 flex flex-col overflow-hidden"
+                className="bg-white rounded-2xl shadow-sm border border-[#E5E5E5] flex flex-col overflow-hidden"
               >
-                {t.image && (
-                  <Image
-                    src={t.image}
-                    alt={`${t.name} utilisant Mapause`}
-                    width={400}
-                    height={192}
-                    className="h-48 w-full object-cover rounded-t-2xl"
-                  />
-                )}
                 <div className="p-8 flex flex-col flex-1">
                   <div className="flex gap-1">
                     {Array.from({ length: 5 }).map((_, i) => (
@@ -139,7 +126,7 @@ export default function TemoignagesPage() {
       </section>
 
       {/* CTA */}
-      <section className="gradient-mist py-20 lg:py-28">
+      <section className="bg-[#F5F5F3] py-20 lg:py-28">
         <div className="max-w-screen-xl mx-auto px-6 text-center">
           <h2 className="font-[var(--font-heading)] text-4xl">
             Rejoignez-les
@@ -149,7 +136,7 @@ export default function TemoignagesPage() {
           </p>
           <Link
             href="/#product"
-            className="inline-block mt-8 bg-sage-600 text-white rounded-full px-10 py-4 font-medium hover:bg-sage-700 transition-colors"
+            className="inline-block mt-8 bg-[#1A1A1A] text-white rounded-full px-10 py-4 font-medium hover:bg-[#333] transition-colors"
           >
             Commander maintenant
           </Link>
