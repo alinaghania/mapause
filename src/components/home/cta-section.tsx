@@ -11,7 +11,7 @@ const trustItems = [
 
 export function CtaSection() {
   return (
-    <section className="gradient-dark py-16 lg:py-20 text-center text-white">
+    <section className="bg-[#1A1A1A] py-16 lg:py-20 text-center text-white">
       <div className="max-w-screen-xl mx-auto px-6">
         <Image
           src="/images/packshot-spa.png"
@@ -31,7 +31,7 @@ export function CtaSection() {
         </p>
         <button
           onClick={() => document.getElementById('product')?.scrollIntoView({ behavior: 'smooth' })}
-          className="inline-block bg-rose-gold text-charcoal hover:bg-rose-light rounded-full px-14 py-5 text-xl font-medium mt-6 transition-colors"
+          className="inline-block bg-white text-[#1A1A1A] hover:bg-[#F5F5F3] rounded-full px-14 py-5 text-xl font-medium mt-6 transition-colors"
         >
           Oui, je veux ma brume
         </button>

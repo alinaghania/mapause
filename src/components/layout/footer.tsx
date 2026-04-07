@@ -27,7 +27,7 @@ const reassuranceItems = [
 
 export function Footer() {
   return (
-    <footer className="gradient-dark text-white">
+    <footer className="bg-[#1A1A1A] text-white">
       {/* Main Footer */}
       <div className="mx-auto max-w-screen-2xl px-6 lg:px-12 py-16">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
@@ -101,7 +101,7 @@ export function Footer() {
               />
               <button
                 type="submit"
-                className="bg-rose-gold text-charcoal text-xs font-medium tracking-wide uppercase px-5 py-2.5 rounded-full hover:opacity-90 transition-opacity"
+                className="bg-white text-[#1A1A1A] text-xs font-medium tracking-wide uppercase px-5 py-2.5 rounded-full hover:opacity-90 transition-opacity"
               >
                 OK
               </button>
@@ -114,7 +114,7 @@ export function Footer() {
           <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
             {reassuranceItems.map((item) => (
               <div key={item.text} className="flex items-center gap-3">
-                <item.icon className="h-5 w-5 text-sage-400 shrink-0" />
+                <item.icon className="h-5 w-5 text-[#344E41] shrink-0" />
                 <span className="text-xs text-white/60">{item.text}</span>
               </div>
             ))}

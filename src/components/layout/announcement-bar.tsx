@@ -7,7 +7,7 @@ export function AnnouncementBar() {
   ];
 
   return (
-    <div className="relative h-9 overflow-hidden bg-gradient-to-r from-sage-800 to-sage-700">
+    <div className="relative h-9 overflow-hidden bg-[#344E41]">
       <div className="flex h-full items-center animate-marquee whitespace-nowrap">
         {[...messages, ...messages].map((msg, i) => (
           <span

@@ -88,9 +88,9 @@ export function TestimonialsSection() {
   }, [emblaApi, onSelect]);
 
   return (
-    <section className="gradient-rose py-16 lg:py-20">
+    <section className="bg-[#F5F5F3] py-16 lg:py-20">
       <div className="max-w-screen-xl mx-auto px-6">
-        <p className="tracking-[0.2em] uppercase text-xs text-sage-600 text-center">
+        <p className="tracking-[0.2em] uppercase text-xs text-[#344E41] text-center">
           Temoignages
         </p>
         <h2 className="font-[var(--font-heading)] text-4xl text-center mt-4">
@@ -113,8 +113,8 @@ export function TestimonialsSection() {
                   key={t.name}
                   className="min-w-0 shrink-0 grow-0 basis-full md:basis-1/2 lg:basis-1/3 px-3"
                 >
-                  <div className="bg-white rounded-xl shadow-sm border border-sage-200 p-8 h-full flex flex-col">
-                    <div className="h-12 w-12 rounded-full bg-sage-100 flex items-center justify-center text-sage-700 font-semibold text-lg">{t.name[0]}</div>
+                  <div className="bg-white rounded-xl shadow-sm border border-[#E5E5E5] p-8 h-full flex flex-col">
+                    <div className="h-12 w-12 rounded-full bg-[#344E41] flex items-center justify-center text-white font-semibold text-lg">{t.name[0]}</div>
                     <div className="flex gap-1 mt-4">
                       {Array.from({ length: 5 }).map((_, i) => (
                         <Star
@@ -138,14 +138,14 @@ export function TestimonialsSection() {
           {/* Navigation arrows */}
           <button
             onClick={scrollPrev}
-            className="absolute top-1/2 -translate-y-1/2 -left-3 md:-left-5 w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center hover:bg-sage-50 transition-colors"
+            className="absolute top-1/2 -translate-y-1/2 -left-3 md:-left-5 w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center hover:bg-[#F5F5F3] transition-colors"
             aria-label="Temoignage precedent"
           >
             <ChevronLeft size={20} />
           </button>
           <button
             onClick={scrollNext}
-            className="absolute top-1/2 -translate-y-1/2 -right-3 md:-right-5 w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center hover:bg-sage-50 transition-colors"
+            className="absolute top-1/2 -translate-y-1/2 -right-3 md:-right-5 w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center hover:bg-[#F5F5F3] transition-colors"
             aria-label="Temoignage suivant"
           >
             <ChevronRight size={20} />
@@ -159,7 +159,7 @@ export function TestimonialsSection() {
               key={i}
               onClick={() => scrollTo(i)}
               className={`w-2.5 h-2.5 rounded-full transition-colors ${
-                i === selectedIndex ? "bg-sage-600" : "bg-sage-200"
+                i === selectedIndex ? "bg-[#1A1A1A]" : "bg-[#E5E5E5]"
               }`}
               aria-label={`Aller au temoignage ${i + 1}`}
             />

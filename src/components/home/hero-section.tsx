@@ -2,11 +2,10 @@
 
 import Image from "next/image";
 import { motion } from "motion/react";
-import { Truck, Shield } from "lucide-react";
 
 export function HeroSection() {
   return (
-    <section className="gradient-hero w-full overflow-hidden">
+    <section className="bg-white w-full overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 lg:px-12 py-20 lg:py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Text content */}
@@ -15,7 +14,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="tracking-[0.2em] uppercase text-sm text-sage-600 font-medium"
+              className="tracking-[0.2em] uppercase text-sm text-[#344E41] font-medium"
             >
               La 1ere brume anti-bouffees de chaleur en France
             </motion.p>
@@ -49,13 +48,13 @@ export function HeroSection() {
             >
               <button
                 onClick={() => document.getElementById('product')?.scrollIntoView({ behavior: 'smooth' })}
-                className="bg-sage-700 text-white rounded-full h-14 px-10 text-base font-semibold hover:bg-sage-800 transition-colors shadow-lg"
+                className="bg-[#1A1A1A] text-white rounded-full h-14 px-10 text-base font-medium hover:bg-[#333] transition-colors shadow-lg"
               >
                 Je veux ma brume - 19,90&euro;
               </button>
               <button
                 onClick={() => document.getElementById('problem')?.scrollIntoView({ behavior: 'smooth' })}
-                className="bg-rose-gold text-charcoal rounded-full h-14 px-10 text-base font-medium hover:opacity-90 transition-opacity"
+                className="border border-[#1A1A1A] text-[#1A1A1A] bg-transparent rounded-full h-14 px-10 text-base font-medium hover:bg-[#1A1A1A] hover:text-white transition-colors"
               >
                 Decouvrir
               </button>
@@ -65,17 +64,9 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.7 }}
-              className="mt-6 flex items-center gap-4 text-sm text-muted-foreground"
+              className="mt-6 text-sm text-muted-foreground"
             >
-              <span className="flex items-center gap-1.5">
-                <Truck className="h-5 w-5" />
-                Livraison offerte des 45&euro;
-              </span>
-              <span className="text-sage-300">|</span>
-              <span className="flex items-center gap-1.5">
-                <Shield className="h-5 w-5" />
-                Satisfaite ou remboursee 30j
-              </span>
+              Livraison offerte des 45&euro; · Satisfaite ou remboursee 30j
             </motion.div>
           </div>
 
@@ -86,12 +77,12 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="flex justify-center lg:justify-end"
           >
-            <div className="relative aspect-[4/5] w-full max-w-lg rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative aspect-[4/5] w-full max-w-lg rounded-2xl overflow-hidden">
               <Image
                 src="/images/packshot-nature.png"
                 alt="MAPAUSE brume rafraîchissante dans un cadre naturel"
                 fill
-                className="object-contain"
+                className="object-cover"
                 priority
               />
             </div>

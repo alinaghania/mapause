@@ -25,7 +25,7 @@ const cards = [
 
 export function ProblemSection() {
   return (
-    <section id="problem" className="w-full bg-ivory py-16 lg:py-20">
+    <section id="problem" className="w-full bg-white py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-6">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -73,9 +73,9 @@ export function ProblemSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 * index }}
-              className="bg-white rounded-xl p-8 shadow-sm border border-sage-200"
+              className="bg-white rounded-xl p-8 shadow-sm border border-[#E5E5E5]"
             >
-              <span className="text-4xl font-heading text-sage-300">{card.number}</span>
+              <span className="text-4xl font-heading text-[#E5E5E5]">{card.number}</span>
               <h3 className="font-bold text-xl mt-4 text-foreground">
                 {card.title}
               </h3>

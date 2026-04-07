@@ -10,7 +10,7 @@ const layers = [
     tags: ["Menthyl Lactate", "L-Menthol"],
   },
   {
-    dotColor: "bg-sage-600",
+    dotColor: "bg-[#344E41]",
     label: "PHYSIQUE",
     step: "02",
     title: "Action Vasculaire",
@@ -35,7 +35,7 @@ export function MechanismSection() {
   return (
     <section className="bg-white">
       <div className="py-16 lg:py-20 px-6 lg:px-12 max-w-screen-xl mx-auto">
-        <p className="tracking-[0.2em] uppercase text-xs text-sage-600 text-center">
+        <p className="tracking-[0.2em] uppercase text-xs text-[#344E41] text-center">
           Science
         </p>
         <h2 className="font-[var(--font-heading)] text-4xl text-center mt-4">
@@ -50,9 +50,9 @@ export function MechanismSection() {
             return (
               <div
                 key={layer.title}
-                className="relative bg-white rounded-xl p-8 border border-sage-200 shadow-sm"
+                className="relative bg-white rounded-xl p-8 border border-[#E5E5E5] shadow-sm"
               >
-                <span className="font-[var(--font-heading)] text-5xl text-sage-200 absolute top-4 right-6 select-none">
+                <span className="font-[var(--font-heading)] text-5xl text-[#F0F0F0] absolute top-4 right-6 select-none">
                   {layer.step}
                 </span>
                 <div className="flex items-center gap-2">
@@ -62,7 +62,7 @@ export function MechanismSection() {
                 <h3 className="font-[var(--font-heading)] text-xl font-semibold mt-6">
                   {layer.title}
                 </h3>
-                <span className="inline-block bg-sage-700 text-white px-3 py-1 rounded-full text-xs font-medium mt-2">
+                <span className="inline-block bg-[#1A1A1A] text-white px-3 py-1 rounded-full text-xs font-medium mt-2">
                   {layer.time}
                 </span>
                 <p className="text-muted-foreground leading-relaxed mt-4">
@@ -72,7 +72,7 @@ export function MechanismSection() {
                   {layer.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="border border-sage-300 bg-sage-50 text-sage-800 font-medium text-xs px-3 py-1 rounded-full"
+                      className="border border-[#E5E5E5] bg-[#F5F5F3] text-[#1A1A1A] font-medium text-xs px-3 py-1 rounded-full"
                     >
                       {tag}
                     </span>

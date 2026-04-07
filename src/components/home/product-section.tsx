@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "motion/react";
-import { Check, Truck, Lock } from "lucide-react";
+import { Check } from "lucide-react";
 
 const formats = [
   { id: "50ml", label: "50ml - Sac a main", price: "19,90" },
@@ -30,7 +30,7 @@ export function ProductSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="tracking-[0.2em] uppercase text-xs text-sage-600 text-center"
+          className="tracking-[0.2em] uppercase text-xs text-[#344E41] text-center"
         >
           NOTRE SOLUTION
         </motion.p>
@@ -40,7 +40,7 @@ export function ProductSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-[var(--font-heading)] text-4xl md:text-5xl text-center text-foreground mt-4 italic"
+          className="font-[var(--font-heading)] text-4xl md:text-5xl text-center text-[#1A1A1A] mt-4"
         >
           Votre alliee anti-bouffees de chaleur
         </motion.h2>
@@ -64,7 +64,7 @@ export function ProductSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <div className="relative aspect-square bg-white border border-sage-200 rounded-3xl p-8 shadow-xl overflow-hidden">
+            <div className="relative aspect-[3/4] rounded-2xl overflow-hidden">
               <Image
                 src="/images/packshot-spa.png"
                 alt="MAPAUSE brume SOS fraîcheur"
@@ -82,10 +82,10 @@ export function ProductSection() {
             transition={{ duration: 0.6, delay: 0.25 }}
           >
             <div className="flex items-center gap-3">
-              <h3 className="font-[var(--font-heading)] text-3xl font-semibold text-foreground">
+              <h3 className="font-[var(--font-heading)] text-3xl font-semibold text-[#1A1A1A]">
                 MAPAUSE - Brume SOS Fraicheur
               </h3>
-              <span className="bg-sage-700 text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+              <span className="bg-[#344E41] text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
                 Nouveaute
               </span>
             </div>
@@ -101,8 +101,8 @@ export function ProductSection() {
                   onClick={() => setSelectedFormat(format.id)}
                   className={`rounded-full px-6 py-4 text-sm transition-colors ${
                     selectedFormat === format.id
-                      ? "bg-sage-700 text-white font-medium shadow-md"
-                      : "bg-white border-2 border-sage-200 text-charcoal hover:border-sage-400"
+                      ? "bg-[#1A1A1A] text-white font-medium shadow-md"
+                      : "border border-[#1A1A1A] text-[#1A1A1A] bg-transparent"
                   }`}
                 >
                   {format.label}
@@ -111,27 +111,19 @@ export function ProductSection() {
             </div>
 
             {/* Price */}
-            <p className="text-4xl font-[var(--font-heading)] font-bold text-foreground mt-6">
+            <p className="text-4xl font-[var(--font-heading)] font-bold text-[#1A1A1A] mt-6">
               {currentFormat.price}&euro;
             </p>
 
             {/* Add to cart */}
-            <button className="w-full bg-[#5C7650] hover:bg-[#4A6340] text-white rounded-full h-16 text-lg font-semibold transition-colors mt-6 shadow-lg">
+            <button className="w-full bg-[#1A1A1A] hover:bg-[#333] text-white rounded-full h-16 text-lg font-medium transition-colors mt-6 shadow-lg">
               Ajouter au panier
             </button>
 
             {/* Trust line */}
-            <div className="flex items-center justify-center gap-4 mt-3 text-sm text-foreground/60">
-              <span className="flex items-center gap-1.5">
-                <Truck className="size-3.5" />
-                Livraison offerte des 45&euro;
-              </span>
-              <span className="text-sage-300">|</span>
-              <span className="flex items-center gap-1.5">
-                <Lock className="size-3.5" />
-                Paiement securise
-              </span>
-            </div>
+            <p className="text-center mt-3 text-sm text-foreground/60">
+              Livraison offerte des 45&euro; · Paiement securise
+            </p>
 
             {/* Benefits list */}
             <ul className="mt-8 space-y-3">
@@ -140,7 +132,7 @@ export function ProductSection() {
                   key={benefit}
                   className="flex items-center gap-3 text-foreground"
                 >
-                  <span className="bg-sage-600 text-white rounded-full p-0.5 shrink-0">
+                  <span className="bg-[#344E41] text-white rounded-full p-0.5 shrink-0">
                     <Check className="size-4" />
                   </span>
                   <span className="text-base">{benefit}</span>

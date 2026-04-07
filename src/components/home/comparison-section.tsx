@@ -55,7 +55,7 @@ const rows = [
 
 function BoolCell({ value, note }: { value: boolean; note?: string }) {
   return value ? (
-    <span className="inline-flex items-center gap-1.5 text-sage-600">
+    <span className="inline-flex items-center gap-1.5 text-[#344E41]">
       <CheckCircle2 className="h-6 w-6" />
       {note && <span className="text-xs">({note})</span>}
     </span>
@@ -70,7 +70,7 @@ export function ComparisonSection() {
   return (
     <section className="bg-white">
       <div className="py-16 lg:py-20 px-6 max-w-screen-xl mx-auto">
-        <p className="tracking-[0.2em] uppercase text-xs text-sage-600 text-center">
+        <p className="tracking-[0.2em] uppercase text-xs text-[#344E41] text-center">
           Comparatif
         </p>
         <h2 className="font-[var(--font-heading)] text-4xl text-center mt-4">
@@ -83,7 +83,7 @@ export function ComparisonSection() {
         <div className="overflow-x-auto mt-8 rounded-xl overflow-hidden">
           <table className="w-full min-w-[600px] text-base">
             <thead>
-              <tr className="bg-sage-700 text-white">
+              <tr className="bg-[#1A1A1A] text-white">
                 <th className="text-left py-4 px-6 font-semibold">
                   Critere
                 </th>
@@ -105,10 +105,10 @@ export function ComparisonSection() {
               {rows.map((row, i) => (
                 <tr
                   key={row.feature}
-                  className={i % 2 === 0 ? "bg-white" : "bg-sage-50"}
+                  className={i % 2 === 0 ? "bg-white" : "bg-[#F5F5F3]"}
                 >
                   <td className="py-4 px-6 font-medium">{row.feature}</td>
-                  <td className="py-4 px-6 text-center bg-sage-50 border-l border-r border-sage-200">
+                  <td className="py-4 px-6 text-center bg-[#F5F5F3] border-l border-r border-[#E5E5E5]">
                     {row.type === "text" ? (
                       <span className="font-medium">
                         {row.mapause as string}

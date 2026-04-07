@@ -45,9 +45,9 @@ export function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="bg-ivory">
+    <section className="bg-white">
       <div className="py-16 lg:py-20 px-6 max-w-3xl mx-auto">
-        <p className="tracking-[0.2em] uppercase text-xs text-sage-600 text-center">
+        <p className="tracking-[0.2em] uppercase text-xs text-[#344E41] text-center">
           FAQ
         </p>
         <h2 className="font-[var(--font-heading)] text-4xl text-center mt-4">
@@ -59,12 +59,12 @@ export function FaqSection() {
 
         <div className="mt-12 bg-white rounded-2xl shadow-sm p-2">
           {faqs.map((faq, i) => (
-            <div key={i} className="border-b border-sage-200 py-6">
+            <div key={i} className="border-b border-[#E5E5E5] py-6">
               <button
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
                 className="flex justify-between items-center w-full text-left cursor-pointer"
               >
-                <span className="text-lg font-semibold text-charcoal pr-4">
+                <span className="text-lg font-semibold text-[#1A1A1A] pr-4">
                   {faq.question}
                 </span>
                 <ChevronDown
