@@ -9,6 +9,6 @@ export async function getDb(): Promise<Db> {
 
   const client = new MongoClient(MONGODB_URI);
   await client.connect();
-  cached = { client, db: client.db("sona-store") };
+  cached = { client, db: client.db("mapause") };
   return cached.db;
 }
