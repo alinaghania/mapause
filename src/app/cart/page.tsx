@@ -42,7 +42,7 @@ export default function CartPage() {
         <p className="mt-6 text-muted-foreground">Votre panier est vide.</p>
         <Button
           nativeButton={false}
-          className="mt-10 h-12 px-12 rounded-full bg-sage-600 hover:bg-sage-700 text-white"
+          className="mt-10 h-12 px-12 rounded-full bg-[#1A1A1A] hover:bg-[#333] text-white"
           render={<Link href="/" />}
         >
           Decouvrir Mapause
@@ -60,14 +60,14 @@ export default function CartPage() {
       </h1>
 
       {!freeShipping && (
-        <div className="mb-8 bg-sage-50 rounded-2xl p-4 text-center text-sm">
-          <Truck className="inline h-4 w-4 mr-2 text-sage-600" />
+        <div className="mb-8 bg-[#F5F5F3] rounded-2xl p-4 text-center text-sm">
+          <Truck className="inline h-4 w-4 mr-2 text-[#344E41]" />
           Plus que <strong>{formatPrice(4500 - totalPrice)}</strong> pour la livraison offerte
         </div>
       )}
 
       {freeShipping && (
-        <div className="mb-8 bg-sage-100 rounded-2xl p-4 text-center text-sm text-sage-800 font-medium">
+        <div className="mb-8 bg-[#344E41]/10 rounded-2xl p-4 text-center text-sm text-[#344E41] font-medium">
           <Truck className="inline h-4 w-4 mr-2" />
           Livraison offerte !
         </div>
@@ -77,9 +77,9 @@ export default function CartPage() {
         {items.map((item) => (
           <div
             key={`${item.product.slug}-${item.format}`}
-            className="flex gap-6 pb-8 border-b border-sage-100"
+            className="flex gap-6 pb-8 border-b border-[#E5E5E5]"
           >
-            <div className="relative h-36 w-28 shrink-0 overflow-hidden rounded-xl bg-champagne">
+            <div className="relative h-36 w-28 shrink-0 overflow-hidden rounded-xl bg-[#F5F5F3]">
               <Image
                 src="/images/packshot-spa.png"
                 alt={item.product.name}
@@ -105,7 +105,7 @@ export default function CartPage() {
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-4">
                   <button
-                    className="h-8 w-8 border rounded-full flex items-center justify-center hover:bg-sage-50 transition-colors"
+                    className="h-8 w-8 border rounded-full flex items-center justify-center hover:bg-[#F5F5F3] transition-colors"
                     onClick={() =>
                       updateQuantity(item.product.slug, item.format, item.quantity - 1)
                     }
@@ -114,7 +114,7 @@ export default function CartPage() {
                   </button>
                   <span className="text-sm w-6 text-center">{item.quantity}</span>
                   <button
-                    className="h-8 w-8 border rounded-full flex items-center justify-center hover:bg-sage-50 transition-colors"
+                    className="h-8 w-8 border rounded-full flex items-center justify-center hover:bg-[#F5F5F3] transition-colors"
                     onClick={() =>
                       updateQuantity(item.product.slug, item.format, item.quantity + 1)
                     }
@@ -146,11 +146,14 @@ export default function CartPage() {
 
         <Button
           size="lg"
-          className="w-full h-14 rounded-full bg-sage-600 hover:bg-sage-700 text-white text-base font-medium tracking-wide"
+          className="w-full h-14 rounded-full bg-[#1A1A1A] hover:bg-[#333] text-white text-base font-medium tracking-wide"
           onClick={handleCheckout}
         >
           Passer la commande
         </Button>
+        <p className="text-xs text-muted-foreground text-center mt-2">
+          Vous serez redirige vers notre page de paiement securisee
+        </p>
 
         <button
           onClick={clearCart}

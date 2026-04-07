@@ -20,11 +20,21 @@ export async function POST(req: NextRequest) {
   }
 
   if (event.type === "checkout.session.completed") {
-    const session = event.data.object;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const session = event.data.object as any;
     const db = await getDb();
     await db.collection("orders").insertOne({
       stripeSessionId: session.id,
+      stripeCustomerId: session.customer,
+      email: session.customer_details?.email,
+      phone: session.customer_details?.phone,
+      name: session.customer_details?.name,
+      shippingAddress: session.shipping_details?.address,
+      shippingName: session.shipping_details?.name,
+      billingAddress: session.customer_details?.address,
       amount: session.amount_total,
+      shipping: session.total_details?.amount_shipping,
+      items: session.metadata?.items ? JSON.parse(session.metadata.items) : [],
       status: "paid",
       createdAt: new Date(),
     });
