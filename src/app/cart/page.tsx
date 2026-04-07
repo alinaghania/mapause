@@ -10,27 +10,8 @@ import { formatPrice } from "@/lib/utils";
 export default function CartPage() {
   const { items, removeItem, updateQuantity, totalPrice, clearCart } = useCart();
 
-  async function handleCheckout() {
-    try {
-      const res = await fetch("/api/checkout", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          items: items.map((i) => ({
-            name: i.product.name,
-            price: i.product.price,
-            quantity: i.quantity,
-            format: i.format,
-          })),
-        }),
-      });
-      const data = await res.json();
-      if (data.url) {
-        window.location.href = data.url;
-      }
-    } catch {
-      // checkout failed
-    }
+  function handleCheckout() {
+    window.location.href = "/checkout";
   }
 
   if (items.length === 0) {
